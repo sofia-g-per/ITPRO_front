@@ -1,23 +1,128 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const portfolio = [
+    {
+      id: 1,
+      title: 'AR',
+      icon: '',
+      projects: [
+        {
+          id: 1,
+          title: 'Термопласт',
+          description: '',
+          platforms: [
+            {
+              id: 1,
+              title: 'android',
+              icon: '',
+            }
+          ],
+          video: '',
+          images: {
+            1: {
+              image: '',
+              description: ''
+            }
+          }
+        },
+        {
+          id: 2,
+          title: 'Термопласт',
+          description: '',
+          platforms: [
+            {
+              id: 1,
+              title: 'android',
+              icon: '',
+            }
+          ],
+          video: '',
+          images: {
+            1: {
+              image: '',
+              description: ''
+            }
+          }
+        },
+        {
+          id: 3,
+          title: 'Термопласт',
+          description: '',
+          platforms: [
+            {
+              id: 1,
+              title: 'android',
+              icon: '',
+            }
+          ],
+          video: '',
+          images: {
+            1: {
+              image: '',
+              description: ''
+            }
+          }
+        }
+      ]
+    },
+    {
+      id: 1,
+      title: 'VR',
+      icon: '',
+      projects: [
+        {
+          id: 1,
+          title: '',
+          description: '',
+          platforms: [
+            {
+              id: 1,
+              title: 'android',
+              icon: '',
+            }
+          ],
+          video: '',
+          images: {
+            1: {
+              image: '',
+              description: ''
+            }
+          }
+        }
+      ]
+    },
+    {
+      id: 1,
+      title: '360',
+      icon: '',
+      projects: [
+        {
+          id: 1,
+          title: '',
+          description: '',
+          platforms: [
+            {
+              id: 1,
+              title: 'android',
+              icon: '',
+            }
+          ],
+          video: '',
+          images: {
+            1: {
+              image: '',
+              description: ''
+            }
+          }
+        }
+      ]
+    }
+  ];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
     </div>
   );
 }
