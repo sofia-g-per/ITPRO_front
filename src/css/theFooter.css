@@ -1,0 +1,55 @@
+.NavBarFooterLink {
+	padding-bottom: 20px;
+	text-align: right;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	font-size: calc(5px + 13 * (100vw / 1920));
+	text-decoration: none;
+	color: #FFF;
+	font-family: Montserrat;
+}
+
+.TheFooter {
+	padding-top: 60px;
+	margin: 0 auto;
+	width: 85vw;
+	height: 474px;
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid #FFF;
+}
+
+.leftPartFooterBar {
+	text-align: left;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 7.14vw;
+}
+
+.social {
+	display: flex;
+	width: 18.9vw;
+	justify-content: space-between;
+	/*padding: 65px 0 65px 0;*/
+}
+
+.simpleText {
+	color: #828282;
+}
+
+.logo {
+	width: 3.6vw;
+
+}
+
+.footerText {
+
+}
+
+.footer {
+	
+
+
+}

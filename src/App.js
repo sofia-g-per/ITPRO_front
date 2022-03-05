@@ -1,4 +1,6 @@
 import './App.css';
+import TheHeader from './components/theHeader.jsx';
+import TheFooter from './components/theFooter.jsx';
 
 function App() {
   const portfolio = [
@@ -122,6 +124,8 @@ function App() {
 
   return (
     <div className="App">
+      <TheHeader></TheHeader>
+      <TheFooter></TheFooter>
       
     </div>
   );

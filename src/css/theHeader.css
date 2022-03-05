@@ -1,0 +1,34 @@
+
+.TheHeader {
+	width: 100vw;
+	height: 100px;
+	border-bottom: 1px solid #FFF;
+
+}
+
+.container {
+	width: 85vw;
+	display: flex;
+	margin: 0 auto;
+	justify-content: space-between;
+	
+	height: 100px;
+}
+
+.NavBarHeader {
+	display: flex;
+	justify-content: space-between;
+	width: 27vw;
+}
+
+.NavBarHeaderLink {
+	font-size: calc(5px + 13 * (100vw / 1920));
+	text-decoration: none;
+	color: #8A8A8B;
+	font-family: Montserrat;
+	transition-duration: .2s;
+}
+
+.NavBarHeaderLink:hover {
+	color: #fff;
+}
