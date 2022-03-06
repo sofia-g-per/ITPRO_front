@@ -9,11 +9,10 @@ import YouTubeLogo from "../img/YouTubeLogo.svg";
 function TheFooter() {
 	return (
 		<div className="footer">
-			<div className="tainer">
 				<div className="TheFooter">
 					<div className="leftPartFooterBar">
 						<img src={logo} alt="Logo" className="logo"/>
-						<p className="simpleText footerText">ITPRO Studio специализируется на создании продуктов для развития <br />бизнеса, презентаций, обучающих материалов, заработка и развлечений.
+						<p className="basic-text footerText">ITPRO Studio специализируется на создании продуктов для развития <br />бизнеса, презентаций, обучающих материалов, заработка и развлечений.
 						</p>
 						<div className="social">
 							<img src={VKLogo} alt="socialLogoVK" className="socialLogo" />
@@ -28,11 +27,8 @@ function TheFooter() {
 						<a href="#" className="NavBarFooterLink">Заказать</a>
 						<a href="#" className="NavBarFooterLink">Контакты</a>
 					</div>
-
 				</div>
-				
-			</div>
-			<p className="simpleText">© ООО ”АЙТИПРО”, 2022 г. Все права защищены.
+			<p className="basic-text text--small">© ООО ”АЙТИПРО”, 2022 г. Все права защищены.
 			</p>
 		</div>
 		);

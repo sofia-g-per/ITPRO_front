@@ -1,0 +1,58 @@
+html{
+  font-size: 62.5%;
+
+  --font-family: Montserrat, sans-serif;
+  --text-font-size: 1.8rem;
+  --section-title-font-size: 4rem;
+  --page-title-font-size: 7rem;
+
+  --color-black: rgb(0, 0, 0);
+  --color-white: #fff;
+  --color-grey: #828282;
+  /* --faded-opacity: .6; */
+  --color-accent-blue: #2FA4C9;
+  --color-accent-purple: #A768BA;
+
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background-color: black;
+  height: var(--color-black);
+  box-sizing: border-box;
+
+	font-family: var(--font-family);
+  font-size: var(--text-font-size);
+  color: var(--color-white);
+
+}
+
+*{
+  margin: 0;
+}
+
+.basic-text {
+	color: var(--color-grey);
+}
+
+.text--small{
+  font-size: 1.4rem;
+}
+
+.logo {
+	width: 3.6vw;
+}
+
+.social {
+	display: flex;
+	width: 18.9vw;
+	justify-content: space-between;
+	/*padding: 65px 0 65px 0;*/
+}
+
+.container{
+	margin: 0 auto;
+}

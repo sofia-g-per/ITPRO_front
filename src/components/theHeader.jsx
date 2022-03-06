@@ -5,7 +5,6 @@ function TheHeader() {
 
   return (
     <div className="TheHeader">
-      <div className=" container">
         <img src={logo} alt="Logo" className='logo' />
         <div className="NavBarHeader">
           <a href="#" className="NavBarHeaderLink">О нас</a>
@@ -13,7 +12,6 @@ function TheHeader() {
           <a href="#" className="NavBarHeaderLink">Заказать</a>
           <a href="#" className="NavBarHeaderLink">Контакты</a>
         </div>
-      </div>
     </div>
     );
 }

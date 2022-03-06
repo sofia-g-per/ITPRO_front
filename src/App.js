@@ -1,4 +1,3 @@
-import './App.css';
 import TheHeader from './components/theHeader.jsx';
 import TheFooter from './components/theFooter.jsx';
 
