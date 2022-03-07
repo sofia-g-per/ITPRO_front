@@ -32,15 +32,51 @@ body {
 
 *{
   margin: 0;
+  box-sizing: border-box;
+  
 }
 
+.visually-hidden{
+  display: none;
+}
+
+/* 
+---------------------------------------------
+  TEXT
+---------------------------------------------
+ */
 .basic-text {
 	color: var(--color-grey);
+  font-size: var(--text-font-size);
+  line-height: 2.7rem;
 }
 
 .text--small{
   font-size: 1.4rem;
 }
+
+/* 
+---------------------------------------------
+  CONTAINERS
+---------------------------------------------
+ */
+ .container{
+	margin: 0 auto;
+}
+
+.split-middle-flex {
+  display: flex;
+}
+
+.split-middle-flex>* {
+  width: 50vw;
+}
+
+/* 
+---------------------------------------------
+  ELEMENTS
+---------------------------------------------
+ */
 
 .logo {
 	width: 3.6vw;
@@ -53,6 +89,3 @@ body {
 	/*padding: 65px 0 65px 0;*/
 }
 
-.container{
-	margin: 0 auto;
-}

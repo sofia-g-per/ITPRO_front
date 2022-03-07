@@ -1,5 +1,5 @@
-import TheHeader from './components/theHeader.jsx';
-import TheFooter from './components/theFooter.jsx';
+
+import ContactUs from './components/ContactUs.jsx'
 
 function App() {
   const portfolio = [
@@ -123,9 +123,7 @@ function App() {
 
   return (
     <div className="App">
-      <TheHeader></TheHeader>
-      <TheFooter></TheFooter>
-      
+      <ContactUs></ContactUs>
     </div>
   );
 }
