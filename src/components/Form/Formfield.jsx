@@ -1,8 +1,8 @@
 function Formfield({children}) {
     return (
-      <div className="form__field basic-text">
+      <div className="form__field">
             {children} 
-          <p className="form_error"></p>
+          <p className="form_error text--small"></p>
       </div>
     );
   }

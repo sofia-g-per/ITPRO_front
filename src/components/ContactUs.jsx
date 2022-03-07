@@ -3,6 +3,8 @@ import React, {Component} from 'react';
 import TextInput from './Form/TextInput.jsx'
 import Formfield from './Form/Formfield.jsx'
 import FormSelect from './Form/FormSelect.jsx'
+import FileInput from './Form/FileInput.jsx'
+import BasicButton from './UI/BasicButton.jsx'
 import '../css/form.css'
 
 class contactUs extends Component{
@@ -65,7 +67,13 @@ class contactUs extends Component{
                     <Formfield>
                         <FormSelect fieldData={formFields[2]}></FormSelect>
                     </Formfield>
-
+                    <Formfield>
+                        <TextInput fieldData={formFields[3]}></TextInput>
+                    </Formfield>
+                    <Formfield>
+                        <FileInput fieldData={formFields[4]}></FileInput>
+                    </Formfield>
+                    <BasicButton title="Отправить"></BasicButton>
                 </form>
             </section>
         );

@@ -12,6 +12,8 @@ html{
   /* --faded-opacity: .6; */
   --color-accent-blue: #2FA4C9;
   --color-accent-purple: #A768BA;
+  --color-accent-purple--dark: #633974;
+
 
 }
 
@@ -33,6 +35,9 @@ body {
 *{
   margin: 0;
   box-sizing: border-box;
+  font-family: var(--font-family);
+  font-size: var(--text-font-size);
+  color: var(--color-white);
   
 }
 
@@ -53,6 +58,7 @@ body {
 
 .text--small{
   font-size: 1.4rem;
+	color: var(--color-grey);
 }
 
 /* 
@@ -66,6 +72,7 @@ body {
 
 .split-middle-flex {
   display: flex;
+  min-height: 100vh;
 }
 
 .split-middle-flex>* {
@@ -87,5 +94,11 @@ body {
 	width: 18.9vw;
 	justify-content: space-between;
 	/*padding: 65px 0 65px 0;*/
+}
+
+.basic-button--purple{
+  background-color: var(--color-accent-purple--dark);
+  border: none;
+  padding: 2vh 0;
 }
 

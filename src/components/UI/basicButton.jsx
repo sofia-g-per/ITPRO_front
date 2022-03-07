@@ -1,8 +1,10 @@
 
-function basicButton() {
+function BasicButton({title}) {
     return (
-  
+      <button className="basic-button--purple">
+        {title}
+      </button>
     );
   }
   
-  export default basicButton;
+  export default BasicButton;
