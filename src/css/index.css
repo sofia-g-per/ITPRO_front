@@ -50,6 +50,17 @@ body {
   TEXT
 ---------------------------------------------
  */
+.primary-heading{
+  font-size: var(--page-title-font-size);
+  text-transform: uppercase;
+}
+
+.secondary-heading{
+  font-size: var(--section-title-font-size);
+  font-weight: 600;
+  line-height: 4.9rem;
+}
+
 .basic-text {
 	color: var(--color-grey);
   font-size: var(--text-font-size);
@@ -66,9 +77,6 @@ body {
   CONTAINERS
 ---------------------------------------------
  */
- .container{
-	margin: 0 auto;
-}
 
 .split-middle-flex {
   display: flex;
@@ -77,6 +85,16 @@ body {
 
 .split-middle-flex>* {
   width: 50vw;
+}
+
+.align-last-to-bottom{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.align-last-to-bottom:last-child{
+  justify-self: end;
 }
 
 /* 

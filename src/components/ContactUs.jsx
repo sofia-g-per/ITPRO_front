@@ -6,6 +6,7 @@ import FormSelect from './Form/FormSelect.jsx'
 import FileInput from './Form/FileInput.jsx'
 import BasicButton from './UI/BasicButton.jsx'
 import '../css/form.css'
+import '../css/contact-us.css'
 
 function ContactUs() {
     // технологии должны выводится из api
@@ -48,8 +49,8 @@ function ContactUs() {
     );
     return(
         <section className="split-middle-flex contact-us">
-            <div className='contact-us__text'>
-                <h2 className=''>Вместе, мы сможем превратить идею в реальность!</h2>
+            <div className='contact-us__text-container align-last-to-bottom'>
+                <h2 className='secondary-heading'>Вместе, мы сможем превратить идею в реальность!</h2>
                 <a href="mailto:info@itpro.moscow">info@itpro.moscow</a>
             </div>
             <form className='contact-us__form form'>

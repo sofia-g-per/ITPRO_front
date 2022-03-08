@@ -16,7 +16,7 @@
 
 .form__input,
 .form__select{
-    background-color: var(--color-black);
+    background-color: transparent;
     border: none;
     border-bottom: solid 1px;
     border-color: var(--color-grey);
