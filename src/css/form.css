@@ -14,11 +14,22 @@
     flex-direction: column;
 }
 
+.form__field__error-label{
+    padding-top: 1rem;
+}
+
+.form__field--error,
+.form__field--error:active{
+    color: var(--color-accent-pink);
+    border-color: var(--color-accent-pink) !important;
+}
+
 .form__input,
 .form__select{
     background-color: transparent;
     border: none;
     border-bottom: solid 1px;
+    color: var(--color-white);
     border-color: var(--color-grey);
     transition: all .5s;
     padding: 1.1rem;

@@ -11,6 +11,7 @@ html{
   --color-grey: #828282;
   /* --faded-opacity: .6; */
   --color-accent-blue: #2FA4C9;
+  --color-accent-pink: #DD345D;
   --color-accent-purple: #A768BA;
   --color-accent-purple--dark: #633974;
 
@@ -119,5 +120,6 @@ body {
   border: none;
   padding: 2vh 0;
   cursor: pointer;
+  width: 100%;
 }
 

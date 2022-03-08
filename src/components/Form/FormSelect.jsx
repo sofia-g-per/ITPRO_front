@@ -18,7 +18,7 @@ class contactUs extends Component{
       const {fieldData} = this.props;
       const {select} = this.state;
       return (
-        <select className='form__select basic-text' aria-label={fieldData.title}>
+        <select className='form__select basic-text form__field--error' aria-label={fieldData.title}>
           {!fieldData.value && <option value={fieldData.title} selected className='visually-hidden'>{fieldData.title}</option>}
           {fieldData.options.map( ({title}) => 
               <option className='basic-text' value={title} key={title}> {title} </option>

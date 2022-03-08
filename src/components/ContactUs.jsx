@@ -16,14 +16,18 @@ function ContactUs() {
             {
                 title: 'Имя',
                 value: '',
+                comment: '',
             },
             {
                 title: 'Почта',
                 value: '',
+                comment: '',
             },
             {
                 title: 'Технология',
                 value: '',
+                comment: '',
+
                 options: [
                     {
                         title: 'AR',
@@ -39,6 +43,7 @@ function ContactUs() {
             {
                 title: 'Название проекта',
                 value: '',
+                comment: '',
             },
             {
                 title: 'Загрузить описание проекта',
@@ -54,22 +59,25 @@ function ContactUs() {
                 <a href="mailto:info@itpro.moscow">info@itpro.moscow</a>
             </div>
             <form className='contact-us__form form'>
-                <Formfield>
+                <Formfield comment={formFields[0].comment}>
                     <TextInput fieldData={formFields[0]}></TextInput>
                 </Formfield>
-                <Formfield>
+                <Formfield comment={formFields[1].comment}>
                     <TextInput fieldData={formFields[1]}></TextInput>
                 </Formfield>
-                <Formfield>
+                <Formfield comment={formFields[2].comment}>
                     <FormSelect fieldData={formFields[2]}></FormSelect>
                 </Formfield>
-                <Formfield>
+                <Formfield comment={formFields[3].comment}>
                     <TextInput fieldData={formFields[3]}></TextInput>
                 </Formfield>
-                <Formfield>
+                <Formfield comment={formFields[4].comment}>
                     <FileInput fieldData={formFields[4]}></FileInput>
                 </Formfield>
-                <BasicButton title="Отправить"></BasicButton>
+                <div>
+                    <BasicButton title="Отправить"></BasicButton>
+                    <p className='text--small form__field__error-label'>Нажимая кнопку “Отправить” Вы даёте согласие на обработку своих персональных данных.</p>
+                </div>
             </form>
         </section>
     );
