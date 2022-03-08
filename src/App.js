@@ -1,4 +1,8 @@
-import ContactUs from './components/ContactUs.jsx'
+import ContactUs from './components/ContactUs.jsx';
+import TheHeader from './components/theHeader.jsx';
+import TheFooter from './components/theFooter.jsx';
+import {Route, Routes, BrowserRouter as Router} from 'react-router-dom';
+import React from 'react';
 
 function App() {
   const portfolio = [
@@ -121,9 +125,18 @@ function App() {
   ];
 
   return (
-    <div className="App">
-      <ContactUs></ContactUs>
-    </div>
+    <React.Fragment>
+      <TheHeader></TheHeader>
+      <Router>
+        <Routes>
+          {/* <Route path="/" exact element={<AboutUs />}/> */}
+          {/* <Route path="/portfolio" element={<Portfolio />}/> */}
+          {/* <Route path="/project/:id" element={<Project />}/> */}
+          <Route path="/contact-us" element={<ContactUs />}/>
+        </Routes>
+      </Router>
+  <TheFooter></TheFooter>
+</React.Fragment>
   );
 }
 

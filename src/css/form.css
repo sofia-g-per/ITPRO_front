@@ -20,7 +20,7 @@
 
 .form__field--error,
 .form__field--error:active{
-    color: var(--color-accent-pink);
+    color: var(--color-accent-pink) !important;
     border-color: var(--color-accent-pink) !important;
 }
 
