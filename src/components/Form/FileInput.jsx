@@ -7,7 +7,9 @@ export default class fileInput extends Component {
     const {title} = fieldData;
     return (
       <div className='form__file-wrapper'>
-        <label for={title} className='form__file-label basic-text'>{title}</label>
+        <div className='form__file-label-wrapper'>
+          <label htmlFor={title} className='basic-text'>{title}</label>
+        </div>
         <input id={title} className='visually-hidden' type="file" />
       </div>
     )

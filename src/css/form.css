@@ -47,6 +47,27 @@
     display: flex;
     justify-content: center;
     padding: 4.4vh 0;
+}
+
+.form__file-wrapper,
+.form__file-label-wrapper{
     cursor: pointer;
 }
+
+.form__file-label-wrapper{
+    display: flex;
+}
+
+.form__file-label-wrapper::before{
+    content: '';
+    display: block;
+    background-image: url('../img/upload-icon.svg');
+    width: 2.4rem;
+    height: 2.4rem;
+}
+
+.form__file-label-wrapper label{
+    padding-left: 2.4rem;
+}
+
 

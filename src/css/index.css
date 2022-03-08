@@ -100,5 +100,6 @@ body {
   background-color: var(--color-accent-purple--dark);
   border: none;
   padding: 2vh 0;
+  cursor: pointer;
 }
 
