@@ -1,4 +1,5 @@
-import ContactUs from './components/ContactUs.jsx';
+import ContactUs from './pages/ContactUs.jsx';
+import Portfolio from './pages/Portfolio.jsx';
 import TheHeader from './components/theHeader.jsx';
 import TheFooter from './components/theFooter.jsx';
 import {Route, Routes, BrowserRouter as Router} from 'react-router-dom';
@@ -14,7 +15,7 @@ function App() {
         {
           id: 1,
           title: 'Термопласт',
-          description: '',
+          description: 'loremlor emloremlorem loremlo mloremlore mloremlo remlor emloremloremloremlorem loremloremloremlore mloremloremloremloremloremloremlor emloremloremloremlorem',
           platforms: [
             {
               id: 1,
@@ -71,7 +72,7 @@ function App() {
       ]
     },
     {
-      id: 1,
+      id: 2,
       title: 'VR',
       icon: '',
       projects: [
@@ -97,7 +98,7 @@ function App() {
       ]
     },
     {
-      id: 1,
+      id: 3,
       title: '360',
       icon: '',
       projects: [
@@ -129,7 +130,7 @@ function App() {
       <TheHeader></TheHeader>
       <Router>
         <Routes>
-          {/* <Route path="/" exact element={<AboutUs />}/> */}
+          <Route path="/" exact element={<Portfolio portfolio={portfolio} />}/>
           {/* <Route path="/portfolio" element={<Portfolio />}/> */}
           {/* <Route path="/project/:id" element={<Project />}/> */}
           <Route path="/contact-us" element={<ContactUs />}/>

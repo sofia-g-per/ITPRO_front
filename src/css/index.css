@@ -62,6 +62,12 @@ body {
   line-height: 4.9rem;
 }
 
+.tertiary-heading{
+  font-size: 2.8rem;
+  font-weight: 500;
+  line-height: 3.3rem;
+}
+
 .basic-text {
 	color: var(--color-grey);
   font-size: var(--text-font-size);
@@ -73,11 +79,20 @@ body {
 	color: var(--color-grey);
 }
 
+.link--blue{
+  text-decoration: none;
+  color: var(--color-accent-blue);
+}
+
 /* 
 ---------------------------------------------
   CONTAINERS
 ---------------------------------------------
  */
+
+.full-screen-container{
+  /* height: calc(100vh - 10rem); */
+}
 
 .split-middle-flex {
   display: flex;
