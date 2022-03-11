@@ -1,5 +1,6 @@
 import ContactUs from './pages/ContactUs.jsx';
 import Portfolio from './pages/Portfolio.jsx';
+import Project from './pages/Project.jsx';
 import TheHeader from './components/theHeader.jsx';
 import TheFooter from './components/theFooter.jsx';
 import {Route, Routes, BrowserRouter as Router} from 'react-router-dom';
@@ -24,12 +25,18 @@ function App() {
             }
           ],
           video: '',
-          images: {
-            1: {
-              image: '',
-              description: ''
-            }
-          }
+          images: [
+            {
+              title: 'lorem lorem',
+              url: '../img/Logo.svg',
+              description: 'lorem lorem'
+            },
+            {
+              title: 'lorem lorem',
+              url: '../img/Logo.svg',
+              description: 'lorem lorem'
+            },
+          ]
         },
         {
           id: 2,
@@ -43,12 +50,12 @@ function App() {
             }
           ],
           video: '',
-          images: {
-            1: {
-              image: '',
+          images: [
+             {
+              url: '',
               description: ''
             }
-          }
+          ]
         },
         {
           id: 3,
@@ -62,12 +69,12 @@ function App() {
             }
           ],
           video: '',
-          images: {
-            1: {
-              image: '',
+          images: [
+            {
+              url: '',
               description: ''
             }
-          }
+          ]
         }
       ]
     },
@@ -88,12 +95,12 @@ function App() {
             }
           ],
           video: '',
-          images: {
-            1: {
-              image: '',
+          images: [
+             {
+              url: '',
               description: ''
             }
-          }
+          ]
         }
       ]
     },
@@ -114,12 +121,12 @@ function App() {
             }
           ],
           video: '',
-          images: {
-            1: {
-              image: '',
+          images: [
+            {
+              url: '',
               description: ''
             }
-          }
+          ]
         }
       ]
     }
@@ -130,8 +137,8 @@ function App() {
       <TheHeader></TheHeader>
       <Router>
         <Routes>
-          <Route path="/" exact element={<Portfolio portfolio={portfolio} />}/>
-          {/* <Route path="/portfolio" element={<Portfolio />}/> */}
+          <Route path="/" exact element={<Project project={portfolio[0].projects[0]} />}/>
+          <Route path="/portfolio" element={<Portfolio />}/>
           {/* <Route path="/project/:id" element={<Project />}/> */}
           <Route path="/contact-us" element={<ContactUs />}/>
         </Routes>

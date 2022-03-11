@@ -1,6 +1,6 @@
 .portfolio{
     padding-right: 14rem;
-    background: url('../../img/background/blue-left.png') 100% 170% no-repeat;
+    background: url('../../img/background/blue-left.png') 100% 150% no-repeat;
 }
 
 .tab-buttons{
@@ -38,5 +38,6 @@
     display: grid;
     grid-template-columns: 1fr;
     row-gap: 12rem;
+    padding-bottom: 18rem;
 }
 
