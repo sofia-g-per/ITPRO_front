@@ -9,128 +9,119 @@ import React from 'react';
 function App() {
   const portfolio = [
     {
-      id: 1,
-      title: 'AR',
-      icon: '',
-      projects: [
-        {
-          id: 1,
-          title: 'Термопласт',
-          description: 'loremlor emloremlorem loremlo mloremlore mloremlo remlor emloremloremloremlorem loremloremloremlore mloremloremloremloremloremloremlor emloremloremloremlorem',
-          platforms: [
+        "id": 1,
+        "title": "VR",
+        "projects": [
             {
-              id: 1,
-              title: 'android',
-              icon: '',
+                "id": 1,
+                "title": "Термопластавтомат",
+                "description": "Фрезерный и токарные работы – тренажер виртуальной реальности, разработанный для симуляции работы универсальном металлообрабатывающем оборудовании, а также для обучения и подготовки персонала.",
+                "technology_id": 1,
+                "video": "https://www.youtube.com/watch?v=TeZjuX3J3Eo",
+                "images": [
+                    {
+                        "description": "В 1865 году компания Phelan & Collendar, производившая бильярдные шары, объявила о вознаграждении в 10000 долларов тому, кто найдёт новый материал, способный заменить слоновую кость. ",
+                        "photo": "/photo1.png"
+                    },
+                    {
+                        "description": "На основе патента на метод изготовления под давлением металлических отливок, полученного в 1870 году Джоном Смитом и Джессом Локом, братья Хайат разработали и в 1872 году запатентовали первую машину для литья пластмассы под давлением. ",
+                        "photo": "/photo3.png"
+                    }
+                ],
+                "platforms": [
+                    {
+                        "id": 2,
+                        "title": "Android",
+                        "pivot": {
+                            "project_id": 1,
+                            "platform_id": 2
+                        }
+                    },
+                    {
+                        "id": 1,
+                        "title": "IOS",
+                        "pivot": {
+                            "project_id": 1,
+                            "platform_id": 1
+                        }
+                    }
+                ],
+                "project_icon": {
+                    "id": 8,
+                    "disk_name": "6221046d6fab8404129524.svg",
+                    "file_name": "project_logo.svg",
+                    "file_size": 2923,
+                    "content_type": "image/svg",
+                    "title": null,
+                    "description": null,
+                    "field": "project_icon",
+                    "sort_order": 8,
+                    "created_at": "2022-03-03 18:09:49",
+                    "updated_at": "2022-03-03 18:14:07",
+                    "path": "http://itpro/storage/app/uploads/public/622/104/6d6/6221046d6fab8404129524.svg",
+                    "extension": "svg"
+                }
             }
-          ],
-          video: '',
-          images: [
-            {
-              title: 'lorem lorem',
-              url: '../img/Logo.svg',
-              description: 'lorem lorem'
-            },
-            {
-              title: 'lorem lorem',
-              url: '../img/Logo.svg',
-              description: 'lorem lorem'
-            },
-          ]
-        },
-        {
-          id: 2,
-          title: 'Термопласт',
-          description: '',
-          platforms: [
-            {
-              id: 1,
-              title: 'android',
-              icon: '',
-            }
-          ],
-          video: '',
-          images: [
-             {
-              url: '',
-              description: ''
-            }
-          ]
-        },
-        {
-          id: 3,
-          title: 'Термопласт',
-          description: '',
-          platforms: [
-            {
-              id: 1,
-              title: 'android',
-              icon: '',
-            }
-          ],
-          video: '',
-          images: [
-            {
-              url: '',
-              description: ''
-            }
-          ]
-        }
-      ]
+        ]
     },
     {
-      id: 2,
-      title: 'VR',
-      icon: '',
-      projects: [
-        {
-          id: 1,
-          title: '',
-          description: '',
-          platforms: [
+        "id": 2,
+        "title": "AR",
+        "projects": [
             {
-              id: 1,
-              title: 'android',
-              icon: '',
+                "id": 2,
+                "title": "Лаборатория",
+                "description": "Фрезерный и токарные работы – тренажер виртуальной реальности, разработанный для симуляции работы универсальном металлообрабатывающем оборудовании, а также для обучения и подготовки персонала.",
+                "technology_id": 2,
+                "video": "",
+                "images": [
+                    {
+                        "description": "тописание",
+                        "photo": "/photo1.png"
+                    }
+                ],
+                "platforms": [
+                    {
+                        "id": 2,
+                        "title": "Android",
+                        "pivot": {
+                            "project_id": 2,
+                            "platform_id": 2
+                        }
+                    },
+                    {
+                        "id": 1,
+                        "title": "IOS",
+                        "pivot": {
+                            "project_id": 2,
+                            "platform_id": 1
+                        }
+                    }
+                ],
+                "project_icon": {
+                    "id": 9,
+                    "disk_name": "622107a4ed23e037827989.svg",
+                    "file_name": "project_logo.svg",
+                    "file_size": 2923,
+                    "content_type": "image/svg",
+                    "title": null,
+                    "description": null,
+                    "field": "project_icon",
+                    "sort_order": 9,
+                    "created_at": "2022-03-03 18:23:32",
+                    "updated_at": "2022-03-03 18:24:32",
+                    "path": "http://itpro/storage/app/uploads/public/622/107/a4e/622107a4ed23e037827989.svg",
+                    "extension": "svg"
+                }
             }
-          ],
-          video: '',
-          images: [
-             {
-              url: '',
-              description: ''
-            }
-          ]
-        }
-      ]
+        ]
     },
     {
-      id: 3,
-      title: '360',
-      icon: '',
-      projects: [
-        {
-          id: 1,
-          title: '',
-          description: '',
-          platforms: [
-            {
-              id: 1,
-              title: 'android',
-              icon: '',
-            }
-          ],
-          video: '',
-          images: [
-            {
-              url: '',
-              description: ''
-            }
-          ]
-        }
-      ]
+        "id": 3,
+        "title": "360",
+        "projects": []
     }
-  ];
+];
 
   return (
     <React.Fragment>

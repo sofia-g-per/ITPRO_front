@@ -30,3 +30,7 @@
 .project-video{
     width: 100vw;
 }
+
+.project-video video{
+    width: 100%;
+}

@@ -4,12 +4,12 @@ import ProjectImageCard from '../components/ProjectImageCard.jsx'
 import PlatformList from '../components/PlatformList.jsx'
 
 function Project({project}) {
-  console.log(project);
   return (
+    <div className='project-page-wrapper'>
     <div className='project-info'>
       <div className='project-info__header'>
         <h1 className='primary-heading'>{project.title}</h1>
-        <p className='text-basic'>{project.description}</p>
+        <p className='basic-text'>{project.description}</p>
         <PlatformList platforms={project.platforms}></PlatformList>
       </div>
       <div className='project-info__images'>
@@ -19,11 +19,10 @@ function Project({project}) {
           )
         }
       </div>
-      <div className='project-video'>
-          <video autoPlay loop muted>
-              <source src={project.video} type="video/mp4" />
-          </video>
-      </div>
+    </div>
+    <div className='project-video'>
+      <iframe src={project.video} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
     </div>
     
   )
