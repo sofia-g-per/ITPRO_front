@@ -1,10 +1,7 @@
-import '../css/theFooter.css';
+import '../css/TheFooter.css';
 import logo from "../img/Logo.svg";
-import VKLogo from "../img/VKLogo.svg";
-import InstagramLogo from "../img/InstagramLogo.svg";
-import FacebookLogo from "../img/FaceBookLogo.svg";
-import YouTubeLogo from "../img/YouTubeLogo.svg";
-
+import SocialLinks from '../components/SocialLinks.jsx';
+import NavBar from '../components/NavBar.jsx';
 
 function TheFooter() {
 	return (
@@ -15,18 +12,10 @@ function TheFooter() {
 						<p className="basic-text footer-text">ITPRO Studio специализируется на создании продуктов для развития <br />бизнеса, презентаций, обучающих материалов, заработка и развлечений.
 						</p>
 						<div className="social">
-							<img src={VKLogo} alt="socialLogoVK" className="social-logo" />
-							<img src={InstagramLogo} alt="socialLogoInstagram" className="social-logo" />
-							<img src={FacebookLogo} alt="socialLogoFaceBook" className="social-logo" />
-							<img src={YouTubeLogo} alt="socialLogoYouTube" className="social-logo" />
+							<SocialLinks></SocialLinks>
 						</div>
 					</div>
-					<div className="nav-bar-footer">
-						<a href="#" className="nav-bar-footer-link">О нас</a>
-						<a href="#" className="nav-bar-footer-link">Портфолио</a>
-						<a href="#" className="nav-bar-footer-link">Заказать</a>
-						<a href="#" className="nav-bar-footer-link">Контакты</a>
-					</div>
+					<NavBar containerClass="nav-bar-column"></NavBar>
 				</div>
 			<p className="basic-text text--small">© ООО ”АЙТИПРО”, 2022 г. Все права защищены.
 			</p>
