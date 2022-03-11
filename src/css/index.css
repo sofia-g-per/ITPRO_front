@@ -27,7 +27,17 @@ body {
 	font-family: var(--font-family);
   font-size: var(--text-font-size);
   color: var(--color-white);
+  height: 100%;
+}
 
+.App {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1 1 auto;
 }
 
 *{

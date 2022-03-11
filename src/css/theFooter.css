@@ -2,7 +2,7 @@
 	padding: 6rem 14rem;
 }
 
-.NavBarFooterLink {
+.nav-bar-footer-link {
 	padding-bottom: 2rem;
 	display: flex;
 	flex-direction: column;
@@ -14,14 +14,14 @@
 	color: var(--color-white);
 }
 
-.TheFooter {
+.the-footer {
 	display: flex;
 	justify-content: space-between;
 	border-bottom: 1px solid var(--color-white);
 	margin-bottom: 6rem;
 }
 
-.leftPartFooterBar {
+.left-part-footer-bar {
 	text-align: left;
 	display: flex;
 	flex-direction: column;

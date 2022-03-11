@@ -1,24 +1,24 @@
 
-.TheHeader {
-	border-bottom: 1px solid color(--color-white);
+.the-header {
+	border-bottom: 1px solid var(--color-white);
 	padding: 2.7rem 14rem;
 	display: flex;
 	justify-content: space-between;
 }
 
-.NavBarHeader {
+.nav-bar-header {
 	display: flex;
 	justify-content: space-between;
 	min-width: 27vw;
 }
 
-.NavBarHeaderLink {
+.nav-bar-header-link {
 	font-size: calc(.5rem + 13 * (100vw / 1920));
 	text-decoration: none;
 	color: var(--color-grey);
 	transition-duration: .5s;
 }
 
-.NavBarHeaderLink:hover {
+.nav-bar-header-link:hover {
 	color: var(--color-white);
 }

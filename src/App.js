@@ -1,5 +1,6 @@
 import TheHeader from './components/theHeader.jsx';
 import TheFooter from './components/theFooter.jsx';
+import Main from './components/main.jsx';
 
 function App() {
   const portfolio = [
@@ -124,6 +125,7 @@ function App() {
   return (
     <div className="App">
       <TheHeader></TheHeader>
+      <Main></Main>
       <TheFooter></TheFooter>
       
     </div>
