@@ -1,6 +1,9 @@
 .portfolio{
-    padding-right: 14rem;
     background: url('../../img/background/blue-left.png') 100% 150% no-repeat;
+}
+
+.portfolio__main-content{
+    padding-right: 14rem;
 }
 
 .tab-buttons{
@@ -9,13 +12,12 @@
 }
 
 .portfolio__video{
-    width: 100vw;
-    /* max-height: 54%; */
+    width: 100%;
 }
 
 .portfolio__video video{
     width: 100%;
-    /* max-height: 54vh; */
+    /* height: 54vh; */
     /* object-fit: contain; */
 
 }
@@ -25,7 +27,7 @@
     grid-template-columns: 1.6fr 1fr;
     padding: 4rem 0 18rem 0;
     gap: 3.8rem 6rem;
-    background: url('../../img/background/blue-middle.png') 2% 95% no-repeat;
+    background: url('../../img/background/blue-middle.png') 0 95% no-repeat;
 
 }
 

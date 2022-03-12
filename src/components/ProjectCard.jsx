@@ -3,11 +3,12 @@ import '../css/project-card.css'
 import PlatformList from './PlatformList.jsx'
 
 export default function ProjectCard({project}) {
+  console.log(project.images[0]);
   return (
     <div className='project-card'>
         <div className='project-card__image-container'>
-            <img className='project-card__image' src={project.images[0]} />
-            <img className='project-card__project-icon' src={project.icon} alt="" />
+            <img className='project-card__image' src={process.env.PUBLIC_URL + project.images[0].photo} />
+            <img className='project-card__project-icon' src={process.env.PUBLIC_URL + project.project_icon.path} alt="" />
         </div>
         
         <div className='project-card__text-container'>

@@ -85,6 +85,18 @@ body {
 .link--blue{
   text-decoration: none;
   color: var(--color-accent-blue);
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+}
+
+.link--blue:after{
+  content: '';
+  display: block;
+  background: url('../img/arrow-right.png');
+  width: 3rem;
+  height: 1rem;
 }
 
 /* 

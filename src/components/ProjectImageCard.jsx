@@ -3,10 +3,12 @@ import '../css/project-card.css'
 
 
 export default function ProjectImageCard({image}) {
+  console.log(image)
+
   return (
     <div className='project-card'>
         <div className='project-card__image-container'>
-            <img src={image.url} alt="" />
+            <img className='project-card__image' src={process.env.PUBLIC_URL + image.photo} alt="" />
         </div>
         
         <div className='project-card__text-container'>

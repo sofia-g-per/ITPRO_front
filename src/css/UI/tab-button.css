@@ -2,6 +2,7 @@
     border: solid var(--color-white) 2px;
     border-radius: 2rem;
     background-color: transparent;
+    height: min-content;
 
     padding: .7rem 2rem;
     display: flex;
