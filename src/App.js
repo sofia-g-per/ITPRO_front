@@ -21,17 +21,18 @@ function App() {
                 "images": [
                     {
                         "description": "В 1865 году компания Phelan & Collendar, производившая бильярдные шары, объявила о вознаграждении в 10000 долларов тому, кто найдёт новый материал, способный заменить слоновую кость. ",
-                        "photo": "/photo1.png"
+                        "photo": "../img/portoflio/termoplast/photo1.png"
                     },
                     {
                         "description": "На основе патента на метод изготовления под давлением металлических отливок, полученного в 1870 году Джоном Смитом и Джессом Локом, братья Хайат разработали и в 1872 году запатентовали первую машину для литья пластмассы под давлением. ",
-                        "photo": "/photo3.png"
+                        "photo": "../img/portoflio/termoplast/photo3.png"
                     }
                 ],
                 "platforms": [
                     {
                         "id": 2,
                         "title": "Android",
+                        "icon": "../img/portfolio/platforms/android_logo.svg",
                         "pivot": {
                             "project_id": 1,
                             "platform_id": 2
@@ -40,6 +41,7 @@ function App() {
                     {
                         "id": 1,
                         "title": "IOS",
+                        "icon": "../img/portfolio/platforms/apple_logo.svg",
                         "pivot": {
                             "project_id": 1,
                             "platform_id": 1
@@ -58,7 +60,7 @@ function App() {
                     "sort_order": 8,
                     "created_at": "2022-03-03 18:09:49",
                     "updated_at": "2022-03-03 18:14:07",
-                    "path": "http://itpro/storage/app/uploads/public/622/104/6d6/6221046d6fab8404129524.svg",
+                    "path": "../img/portoflio/project_logo.svg",
                     "extension": "svg"
                 }
             }
@@ -84,6 +86,7 @@ function App() {
                     {
                         "id": 2,
                         "title": "Android",
+                        "icon": "../img/portfolio/platforms/android_logo.svg",
                         "pivot": {
                             "project_id": 2,
                             "platform_id": 2
@@ -92,6 +95,7 @@ function App() {
                     {
                         "id": 1,
                         "title": "IOS",
+                        "icon": "../img/portfolio/platforms/apple_logo.svg",
                         "pivot": {
                             "project_id": 2,
                             "platform_id": 1
@@ -110,7 +114,7 @@ function App() {
                     "sort_order": 9,
                     "created_at": "2022-03-03 18:23:32",
                     "updated_at": "2022-03-03 18:24:32",
-                    "path": "http://itpro/storage/app/uploads/public/622/107/a4e/622107a4ed23e037827989.svg",
+                    "path": "../img/portoflio/project_logo.svg",
                     "extension": "svg"
                 }
             }
