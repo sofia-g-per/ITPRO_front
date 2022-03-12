@@ -5,6 +5,8 @@ import TheHeader from './components/theHeader.jsx';
 import TheFooter from './components/theFooter.jsx';
 import {Route, Routes, BrowserRouter as Router} from 'react-router-dom';
 import React from 'react';
+import Popup from './components/UI/Popup';
+import ContactsPopup from './components/ContactsPopup.jsx';
 
 function App() {
   let portfolio = [
@@ -138,7 +140,11 @@ function App() {
 
   return (
     <React.Fragment>
+        
       <TheHeader></TheHeader>
+      <Popup containerClass="contacts-popup">
+        <ContactsPopup></ContactsPopup>
+      </Popup>
       <Router>
         <Routes>
           <Route path="/" exact element={<Project project={portfolio[0].projects[0]} />}/>

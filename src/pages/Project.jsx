@@ -3,6 +3,7 @@ import '../css/pages/project.css'
 import ProjectImageCard from '../components/ProjectImageCard.jsx'
 import PlatformList from '../components/PlatformList.jsx'
 
+
 function Project({project}) {
   console.log(project);
   console.log(project.images);

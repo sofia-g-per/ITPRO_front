@@ -31,6 +31,8 @@ body {
   font-size: var(--text-font-size);
   color: var(--color-white);
 
+  position: relative;
+  z-index: 0;
 }
 
 *{
@@ -39,6 +41,8 @@ body {
   font-family: var(--font-family);
   font-size: var(--text-font-size);
   color: var(--color-white);
+  z-index: 0;
+
   
 }
 
