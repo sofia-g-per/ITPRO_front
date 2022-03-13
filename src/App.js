@@ -145,26 +145,28 @@ function App() {
   return (
     <React.Fragment>
         
-      <TheHeader></TheHeader>
          <Popup containerClass="submitted-popup-wrapper">
             <FormSubmittedPopup></FormSubmittedPopup>
         </Popup>
-            {/* <Popup containerClass="test-request-popup-wrapper">
-                <TestRequestPopup></TestRequestPopup>
-            </Popup> */}
-      {/* <Popup containerClass="contacts-popup">
-        <ContactsPopup></ContactsPopup>
-      </Popup> */}
+        {/* <Popup containerClass="test-request-popup-wrapper">
+            <TestRequestPopup></TestRequestPopup>
+        </Popup> */}
+        {/* <Popup containerClass="contacts-popup">
+            <ContactsPopup></ContactsPopup>
+        </Popup> */}
       <Router>
+        <TheHeader></TheHeader>
+
         <Routes>
-          <Route path="/" element={<Portfolio portfolio={portfolio} />}/>
+          <Route path="/" exact element={<Portfolio portfolio={portfolio} />}/>
           <Route path="/portfolio" element={<Portfolio portfolio={portfolio} />}/>
-          <Route path="/project" exact element={<Project project={portfolio[0].projects[0]} />}/>
+          <Route path="/project" element={<Project project={portfolio[0].projects[0]} />}/>
           {/* <Route path="/project/:id" element={<Project />}/> */}
           <Route path="/contact-us" element={<ContactUs />}/>
         </Routes>
+
+        <TheFooter></TheFooter>
       </Router>
-  <TheFooter></TheFooter>
 </React.Fragment>
   );
 }

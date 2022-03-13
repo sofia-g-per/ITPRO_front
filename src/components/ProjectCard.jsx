@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom';
 import '../css/project-card.css'
 import PlatformList from './PlatformList.jsx'
 
@@ -15,7 +16,7 @@ export default function ProjectCard({project}) {
             <h3 className='tertiary-heading'>{project.title}</h3>
             <PlatformList platforms={project.platforms}></PlatformList>
             <p className='basic-text'>{project.description}</p>
-            <a className='link--blue' href="#">Подробнее</a>
+            <Link className='link--blue' to='/project'>Подробнее</Link>
         </div>
     </div>
   )

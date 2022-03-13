@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../css/contacts-popup.css'
 import logo from "../../img/Logo.svg";
-
+import SocialLinks from '../../components/SocialLinks.jsx';
 
 export default function ContactsPopup() {
   return (
@@ -13,7 +13,7 @@ export default function ContactsPopup() {
         </div>
         <div className="contacts-popup__socials contacts-popup__item">
             <p className='contacts-popup__socials__text popup-text--small'>Мы в социальных сетях</p>
-            <a href="mailto:info@itpro.moscow">info@itpro.moscow</a>
+            <SocialLinks></SocialLinks>
         </div>
     </div>
   )

@@ -17,7 +17,8 @@ function TheFooter() {
 					</div>
 					<NavBar containerClass="nav-bar-column"></NavBar>
 				</div>
-			<p className="basic-text text--small">© ООО ”АЙТИПРО”, 2022 г. Все права защищены.
+			<p className="basic-text text--small">
+				© ООО ”АЙТИПРО”, 2022 г. Все права защищены.
 			</p>
 		</div>
 		);
