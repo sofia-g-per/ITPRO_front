@@ -68,14 +68,7 @@ function App() {
                     "path": "/images/portoflio/project_logo.svg",
                     "extension": "svg"
                 }
-            }
-        ]
-    },
-    {
-        "id": 2,
-        "title": "AR",
-        "icon": "/images/portfolio/technologies/ar_logo.svg",
-        "projects": [
+            },
             {
                 "id": 2,
                 "title": "Лаборатория",
@@ -127,6 +120,14 @@ function App() {
         ]
     },
     {
+        "id": 2,
+        "title": "AR",
+        "icon": "/images/portfolio/technologies/ar_logo.svg",
+        "projects": [
+
+        ]
+    },
+    {
         "id": 3,
         "title": "360",
         "icon": "/images/portfolio/technologies/360_logo.svg",
@@ -155,9 +156,9 @@ function App() {
       </Popup> */}
       <Router>
         <Routes>
-          <Route path="/" exact element={<Project project={portfolio[0].projects[0]} />}/>
-          {/* <Route path="/" element={<Portfolio portfolio={portfolio} />}/> */}
+          <Route path="/" element={<Portfolio portfolio={portfolio} />}/>
           <Route path="/portfolio" element={<Portfolio portfolio={portfolio} />}/>
+          <Route path="/project" exact element={<Project project={portfolio[0].projects[0]} />}/>
           {/* <Route path="/project/:id" element={<Project />}/> */}
           <Route path="/contact-us" element={<ContactUs />}/>
         </Routes>

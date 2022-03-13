@@ -5,8 +5,7 @@ import PlatformList from '../components/PlatformList.jsx'
 
 
 function Project({project}) {
-  console.log(project);
-  console.log(project.images);
+
   return (
     <div className='project-page-wrapper'>
       <div className='project-info'>
@@ -24,7 +23,7 @@ function Project({project}) {
         </div>
       </div>
       <div className='project-video'>
-        <iframe src={project.video} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src={project.video} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
       </div>
     </div>
     

@@ -5,10 +5,8 @@ import TabButton from '../components/UI/TabButton.jsx';
 import ProjectCard from '../components/ProjectCard.jsx';
 
 function Portfolio({portfolio}) {
-    console.log(portfolio)
     const [currentCategory, setCategory] = useState(0);
     const changeCategory = (id)=>{
-        // console.log('yay');
         setCategory(portfolio.findIndex((category)=> category.id === id));
     }
 
@@ -30,7 +28,7 @@ function Portfolio({portfolio}) {
                             {
                                 portfolio.map((category) => 
                                     <TabButton 
-                                        className={currentCategory === portfolio.findIndex((cat)=> cat.id === category.id) ? 'tab-button--active': ''}
+                                        isActive={currentCategory === portfolio.findIndex((cat)=> cat.id === category.id) ? 'tab-button--active': ''}
                                         onClick={changeCategory.bind(category.id)}
                                         key={category.id} 
                                         title={category.title} 

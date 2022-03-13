@@ -2,7 +2,6 @@ import React from 'react'
 import '../css/platform-list.css'
 
 export default function PlatformList({platforms}) {
-  console.log(platforms)
   return (
     <div className='platform-list'>
         <span>Платформы: </span>

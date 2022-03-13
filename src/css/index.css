@@ -49,7 +49,7 @@ body {
 }
 
 .visually-hidden{
-  display: none;
+  display: none !important;
 }
 
 /* 

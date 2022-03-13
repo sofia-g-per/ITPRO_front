@@ -3,7 +3,6 @@ import '../css/project-card.css'
 
 
 export default function ProjectImageCard({image}) {
-  console.log(image)
 
   return (
     <div className='project-card'>

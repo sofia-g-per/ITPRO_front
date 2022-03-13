@@ -14,8 +14,10 @@
 
 .tab-button:hover{
     background-color: var(--color-accent-blue);
+    border-color: var(--color-accent-blue);
 }
 
 .tab-button--active{
     background-color: var(--color-accent-blue);
+    border-color: var(--color-accent-blue);
 }
