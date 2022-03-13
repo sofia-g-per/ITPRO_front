@@ -32,9 +32,17 @@ body {
 	font-family: var(--font-family);
   font-size: var(--text-font-size);
   color: var(--color-white);
+  height: 100%;
+}
 
-  position: relative;
-  z-index: 0;
+.App {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1 1 auto;
 }
 
 *{
@@ -114,6 +122,10 @@ body {
   height: 1rem;
 }
 
+.white-text {
+  color: var(--color-white);
+}
+
 /* 
 ---------------------------------------------
   CONTAINERS
@@ -157,6 +169,7 @@ body {
 	display: flex;
 	width: 18.9vw;
 	justify-content: space-between;
+  align-items: center;
 	/*padding: 65px 0 65px 0;*/
 }
 

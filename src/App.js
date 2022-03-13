@@ -9,6 +9,7 @@ import Popup from './components/UI/Popup';
 import ContactsPopup from './components/Popups/ContactsPopup.jsx';
 import TestRequestPopup from './components/Popups/TestRequestPopup.jsx';
 import FormSubmittedPopup from './components/Popups/FormSubmittedPopup.jsx';
+import DevWithArVr from './components/DevWithArVr.jsx';
 
 function App() {
   let portfolio = [

@@ -1,32 +1,21 @@
-import '../css/theFooter.css';
+import '../css/TheFooter.css';
 import logo from "../img/Logo.svg";
-import VKLogo from "../img/VKLogo.svg";
-import InstagramLogo from "../img/InstagramLogo.svg";
-import FacebookLogo from "../img/FaceBookLogo.svg";
-import YouTubeLogo from "../img/YouTubeLogo.svg";
-
+import SocialLinks from '../components/SocialLinks.jsx';
+import NavBar from '../components/NavBar.jsx';
 
 function TheFooter() {
 	return (
 		<div className="footer">
-				<div className="TheFooter">
-					<div className="leftPartFooterBar">
+				<div className="the-footer">
+					<div className="left-part-footer-bar">
 						<img src={logo} alt="Logo" className="logo"/>
-						<p className="basic-text footerText">ITPRO Studio специализируется на создании продуктов для развития <br />бизнеса, презентаций, обучающих материалов, заработка и развлечений.
+						<p className="basic-text footer-text">ITPRO Studio специализируется на создании продуктов для развития <br />бизнеса, презентаций, обучающих материалов, заработка и развлечений.
 						</p>
 						<div className="social">
-							<img src={VKLogo} alt="socialLogoVK" className="socialLogo" />
-							<img src={InstagramLogo} alt="socialLogoInstagram" className="socialLogo" />
-							<img src={FacebookLogo} alt="socialLogoFaceBook" className="socialLogo" />
-							<img src={YouTubeLogo} alt="socialLogoYouTube" className="socialLogo" />
+							<SocialLinks></SocialLinks>
 						</div>
 					</div>
-					<div className="NavBarFooter">
-						<a href="#" className="NavBarFooterLink">О нас</a>
-						<a href="#" className="NavBarFooterLink">Портфолио</a>
-						<a href="#" className="NavBarFooterLink">Заказать</a>
-						<a href="#" className="NavBarFooterLink">Контакты</a>
-					</div>
+					<NavBar containerClass="nav-bar-column"></NavBar>
 				</div>
 			<p className="basic-text text--small">© ООО ”АЙТИПРО”, 2022 г. Все права защищены.
 			</p>

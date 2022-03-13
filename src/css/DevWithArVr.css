@@ -1,0 +1,19 @@
+.purple-text {
+	color: #A768BA;
+	padding-top: 3rem;
+}
+
+.dev-with-ar-vr {
+	display: flex;
+	justify-content: space-between;
+	padding: 16rem 14rem;
+}
+
+.text-with-arrow {
+	display: flex;
+}
+
+.arrow {
+	padding-top: 3rem;
+	padding-left: 2.5rem;
+}
