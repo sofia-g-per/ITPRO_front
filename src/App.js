@@ -8,6 +8,7 @@ import React from 'react';
 import Popup from './components/UI/Popup';
 import ContactsPopup from './components/Popups/ContactsPopup.jsx';
 import TestRequestPopup from './components/Popups/TestRequestPopup.jsx';
+import FormSubmittedPopup from './components/Popups/FormSubmittedPopup.jsx';
 
 function App() {
   let portfolio = [
@@ -143,9 +144,12 @@ function App() {
     <React.Fragment>
         
       <TheHeader></TheHeader>
-        <Popup containerClass="test-request-popup-wrapper">
-            <TestRequestPopup></TestRequestPopup>
+         <Popup containerClass="submitted-popup-wrapper">
+            <FormSubmittedPopup></FormSubmittedPopup>
         </Popup>
+            {/* <Popup containerClass="test-request-popup-wrapper">
+                <TestRequestPopup></TestRequestPopup>
+            </Popup> */}
       {/* <Popup containerClass="contacts-popup">
         <ContactsPopup></ContactsPopup>
       </Popup> */}

@@ -20,7 +20,7 @@
     transform: translate(-50%, -50%);
 
     display: grid;
-    width: 80vw;
+    max-width: 80vw; 
     padding: var(--popup-padding);
     border-radius: 2rem;
     background-color: var(--color-black);
