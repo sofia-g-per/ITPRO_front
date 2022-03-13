@@ -26,8 +26,6 @@
 }
 
 .contacts-popup__mail__link{
-    font-size: 4rem;
-    font-weight: 400;
     text-decoration: none;
 }
 
@@ -36,5 +34,4 @@
 }
 
 .contacts-popup__socials__text{
-    font-size: 2rem;
 }

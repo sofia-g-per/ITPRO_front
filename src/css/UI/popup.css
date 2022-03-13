@@ -21,7 +21,7 @@
 
     display: grid;
     width: 80vw;
-    padding: 3.5rem;
+    padding: var(--popup-padding);
     border-radius: 2rem;
     background-color: var(--color-black);
 }

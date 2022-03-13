@@ -15,6 +15,8 @@ html{
   --color-accent-purple: #A768BA;
   --color-accent-purple--dark: #633974;
 
+  --popup-padding: 3.5rem;
+
 
 }
 
@@ -71,6 +73,15 @@ body {
   font-size: 2.8rem;
   font-weight: 500;
   line-height: 3.3rem;
+}
+
+.popup-heading{
+  font-size: 4rem;
+  font-weight: 400;
+}
+
+.popup-text--small{
+  font-size: 2rem;
 }
 
 .basic-text {
