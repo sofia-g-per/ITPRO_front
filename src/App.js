@@ -2,6 +2,7 @@ import ContactUs from './components/ContactUs.jsx';
 import TheFooter from './components/TheFooter.jsx';
 import TheHeader from './components/TheHeader.jsx';
 import DevWithArVr from './components/DevWithArVr.jsx';
+import OurCustomers from './components/OurCustomers.jsx';
 
 function App() {
   const portfolio = [
@@ -127,6 +128,7 @@ function App() {
     <div className="App">
       <TheHeader></TheHeader>
       <DevWithArVr></DevWithArVr>
+      <OurCustomers></OurCustomers>
       <ContactUs></ContactUs>
       <TheFooter></TheFooter>
     </div>
