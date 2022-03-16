@@ -140,20 +140,115 @@ function App() {
         "projects": []
     }
 ];
-const [portfolio, setPortfolio] = useState([    {
-    "id": 2,
-    "title": "AR",
-    "technology_icon": { path: "/images/portfolio/technologies/ar_logo.svg"},
-    "projects": [
-
-    ]
-},]);
+const [portfolio, setPortfolio] = useState([ 
+    {
+        "id": 1,
+        "title": "VR",
+        "technology_icon": {
+            "id": 3,
+            "disk_name": "622103c26228f577602076.svg",
+            "file_name": "vr_logo.svg",
+            "file_size": 778,
+            "content_type": "image/svg",
+            "title": null,
+            "description": null,
+            "field": "technology_icon",
+            "sort_order": 3,
+            "created_at": "2022-03-03 18:06:58",
+            "updated_at": "2022-03-03 18:06:59",
+            "path": "http://itpro/storage/app/uploads/public/622/103/c26/622103c26228f577602076.svg",
+            "extension": "svg"
+        },
+        "projects": [
+            {
+                "id": 1,
+                "title": "Термопластавтомат",
+                "description": "Фрезерный и токарные работы – тренажер виртуальной реальности, разработанный для симуляции работы универсальном металлообрабатывающем оборудовании, а также для обучения и подготовки персонала.",
+                "technology_id": 1,
+                "video": "https://www.youtube.com/watch?v=TeZjuX3J3Eo",
+                "images": [
+                    {
+                        "description": "В 1865 году компания Phelan & Collendar, производившая бильярдные шары, объявила о вознаграждении в 10000 долларов тому, кто найдёт новый материал, способный заменить слоновую кость. ",
+                        "photo": "/photo1.png"
+                    },
+                    {
+                        "description": "На основе патента на метод изготовления под давлением металлических отливок, полученного в 1870 году Джоном Смитом и Джессом Локом, братья Хайат разработали и в 1872 году запатентовали первую машину для литья пластмассы под давлением. ",
+                        "photo": "/photo3.png"
+                    }
+                ],
+                "platforms": [
+                    {
+                        "id": 2,
+                        "title": "Android",
+                        "pivot": {
+                            "project_id": 1,
+                            "platform_id": 2
+                        },
+                        "platform_icon": {
+                            "id": 6,
+                            "disk_name": "622103e605fbd609954184.svg",
+                            "file_name": "android_logo.svg",
+                            "file_size": 4543,
+                            "content_type": "image/svg",
+                            "title": null,
+                            "description": null,
+                            "field": "platform_icon",
+                            "sort_order": 6,
+                            "created_at": "2022-03-03 18:07:34",
+                            "updated_at": "2022-03-03 18:07:35",
+                            "path": "http://itpro/storage/app/uploads/public/622/103/e60/622103e605fbd609954184.svg",
+                            "extension": "svg"
+                        }
+                    },
+                    {
+                        "id": 1,
+                        "title": "IOS",
+                        "pivot": {
+                            "project_id": 1,
+                            "platform_id": 1
+                        },
+                        "platform_icon": {
+                            "id": 2,
+                            "disk_name": "622103a8bcd1f961578793.svg",
+                            "file_name": "apple_logo.svg",
+                            "file_size": 2509,
+                            "content_type": "image/svg",
+                            "title": null,
+                            "description": null,
+                            "field": "platform_icon",
+                            "sort_order": 2,
+                            "created_at": "2022-03-03 18:06:32",
+                            "updated_at": "2022-03-03 18:06:35",
+                            "path": "http://itpro/storage/app/uploads/public/622/103/a8b/622103a8bcd1f961578793.svg",
+                            "extension": "svg"
+                        }
+                    }
+                ],
+                "project_icon": {
+                    "id": 8,
+                    "disk_name": "6221046d6fab8404129524.svg",
+                    "file_name": "project_logo.svg",
+                    "file_size": 2923,
+                    "content_type": "image/svg",
+                    "title": null,
+                    "description": null,
+                    "field": "project_icon",
+                    "sort_order": 8,
+                    "created_at": "2022-03-03 18:09:49",
+                    "updated_at": "2022-03-03 18:14:07",
+                    "path": "http://itpro/storage/app/uploads/public/622/104/6d6/6221046d6fab8404129524.svg",
+                    "extension": "svg"
+                }
+            }
+        ]
+    }
+]);
 
 useEffect( () => {
     axios.get('http://itpro/technologies')
         .then(res => {
-            console.log(res)
             setPortfolio(res.data);
+            console.log(portfolio)
         })
         .catch( err=> {
             console.log(err)
@@ -202,7 +297,7 @@ useEffect( () => {
         <Routes>
           <Route path="/" exact element={<Portfolio portfolio={portfolio} />}/>
           <Route path="/portfolio" element={<Portfolio portfolio={portfolio} />}/>
-          <Route path="/project" element={<Project project={portfolio[0].projects[0]} />}/>
+          {/* <Route path="/project" element={<Project project={portfolio[0].projects[0]} />}/> */}
           {/* <Route path="/project/:id" element={<Project />}/> */}
           <Route path="/contact-us" element={<ContactUs />}/>
         </Routes>

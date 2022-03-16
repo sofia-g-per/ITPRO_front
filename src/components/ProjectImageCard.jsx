@@ -7,7 +7,7 @@ export default function ProjectImageCard({image}) {
   return (
     <div className='project-card'>
         <div className='project-card__image-container'>
-            <img className='project-card__image' src={process.env.PUBLIC_URL + image.photo} alt="" />
+            <img className='project-card__image' src={'http://itpro/storage/app/media/' + image.photo} alt="" />
         </div>
         
         <div className='project-card__text-container'>
