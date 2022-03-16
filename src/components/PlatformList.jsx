@@ -8,7 +8,8 @@ export default function PlatformList({platforms}) {
         {
             platforms.map( platform => 
                 
-              <img src={process.env.PUBLIC_URL + platform.icon} alt={platform.title} />
+              // <img src={process.env.PUBLIC_URL + platform.icon} alt={platform.title} />
+              <img src={platform.platform_icon.path} alt={platform.title} />
                 
             )
         }

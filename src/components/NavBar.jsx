@@ -1,7 +1,7 @@
 import '../css/TheFooter.css';
 import {Link} from 'react-router-dom';
 
-function NavBar({containerClass}) {
+function NavBar({containerClass, onOpenContactsPopup}) {
 	return (
 			<div className={containerClass}>
 				<Link className="nav-bar-link" to="/">
@@ -13,7 +13,7 @@ function NavBar({containerClass}) {
 				<Link className="nav-bar-link" to="/contact-us">
 					Заказать
 				</Link>
-				<span className="nav-bar-link">Контакты</span>	
+				<span className="nav-bar-link" onClick={onOpenContactsPopup}>Контакты</span>	
 
 			</div>
 

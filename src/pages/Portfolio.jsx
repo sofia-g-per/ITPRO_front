@@ -32,7 +32,9 @@ function Portfolio({portfolio}) {
                                         onClick={changeCategory.bind(category.id)}
                                         key={category.id} 
                                         title={category.title} 
-                                        icon={category.icon}>
+                                        // icon={category.icon}
+                                        icon={category.technology_icon}
+                                        >
                                     </TabButton>
                                 ) 
                             }

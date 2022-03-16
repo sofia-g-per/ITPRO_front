@@ -1,9 +1,8 @@
 import '../css/TheFooter.css';
 import logo from "../img/Logo.svg";
 import SocialLinks from '../components/SocialLinks.jsx';
-import NavBar from '../components/NavBar.jsx';
 
-function TheFooter() {
+function TheFooter({children}) {
 	return (
 		<div className="footer">
 				<div className="the-footer">
@@ -15,10 +14,9 @@ function TheFooter() {
 							<SocialLinks></SocialLinks>
 						</div>
 					</div>
-					<NavBar containerClass="nav-bar-column"></NavBar>
+					{children}
 				</div>
-			<p className="basic-text text--small">
-				© ООО ”АЙТИПРО”, 2022 г. Все права защищены.
+			<p className="basic-text text--small">© ООО ”АЙТИПРО”, 2022 г. Все права защищены.
 			</p>
 		</div>
 		);

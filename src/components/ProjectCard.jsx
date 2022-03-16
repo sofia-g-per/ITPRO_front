@@ -8,8 +8,8 @@ export default function ProjectCard({project}) {
   return (
     <div className='project-card'>
         <div className='project-card__image-container'>
-            <img className='project-card__image' src={process.env.PUBLIC_URL + project.images[0].photo} />
-            <img className='project-card__project-icon' src={process.env.PUBLIC_URL + project.project_icon.path} alt="" />
+            <img className='project-card__image' src={'http://itpro/storage/app/media/' +project.images[0].photo} />
+            <img className='project-card__project-icon' src={project.project_icon.path} alt="" />
         </div>
         
         <div className='project-card__text-container'>

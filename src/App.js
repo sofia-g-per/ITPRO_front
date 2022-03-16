@@ -3,8 +3,13 @@ import Portfolio from './pages/Portfolio.jsx';
 import Project from './pages/Project.jsx';
 import TheHeader from './components/theHeader.jsx';
 import TheFooter from './components/theFooter.jsx';
+import NavBar from './components/NavBar.jsx';
+
 import {Route, Routes, BrowserRouter as Router} from 'react-router-dom';
 import React from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+
 import Popup from './components/UI/Popup';
 import ContactsPopup from './components/Popups/ContactsPopup.jsx';
 import TestRequestPopup from './components/Popups/TestRequestPopup.jsx';
@@ -12,7 +17,7 @@ import FormSubmittedPopup from './components/Popups/FormSubmittedPopup.jsx';
 import DevWithArVr from './components/DevWithArVr.jsx';
 
 function App() {
-  let portfolio = [
+  let portfolioOLD = [
     {
         "id": 1,
         "title": "VR",
@@ -135,27 +140,64 @@ function App() {
         "projects": []
     }
 ];
+const [portfolio, setPortfolio] = useState([    {
+    "id": 2,
+    "title": "AR",
+    "technology_icon": { path: "/images/portfolio/technologies/ar_logo.svg"},
+    "projects": [
+
+    ]
+},]);
+
+useEffect( () => {
+    axios.get('http://itpro/technologies')
+        .then(res => {
+            console.log(res)
+            setPortfolio(res.data);
+        })
+        .catch( err=> {
+            console.log(err)
+        })
+}, [])
+// const api = axios.create(
+//     baseUrl: 'http://itpro'
+// );
+
 
 // portfolio.forEach((category) => {
 //     console.log(category.icon);
 //     const picture = (await import(category.icon));
 //     category.icon = picture;
 // });
+    const [isContactsPopupOpen, updateIsContactsPopupOpen] = useState(false);
+
+    const handleOpenContactsPopup = () => {
+        updateIsContactsPopupOpen(true);
+    }
+
+    const handleClosePopup = () => {
+        updateIsContactsPopupOpen(false);
+    }
 
   return (
     <React.Fragment>
         
-         <Popup containerClass="submitted-popup-wrapper">
+         {/* <Popup containerClass="submitted-popup-wrapper">
             <FormSubmittedPopup></FormSubmittedPopup>
-        </Popup>
+        </Popup> */}
         {/* <Popup containerClass="test-request-popup-wrapper">
             <TestRequestPopup></TestRequestPopup>
         </Popup> */}
-        {/* <Popup containerClass="contacts-popup">
-            <ContactsPopup></ContactsPopup>
-        </Popup> */}
+        {
+            isContactsPopupOpen && 
+            <Popup onClosePopup={handleClosePopup} containerClass="contacts-popup">
+                <ContactsPopup></ContactsPopup>
+            </Popup>
+        }
       <Router>
-        <TheHeader></TheHeader>
+        <TheHeader>
+            <NavBar containerClass="nav-bar-row" onOpenContactsPopup={handleOpenContactsPopup} ></NavBar>
+        </TheHeader>
 
         <Routes>
           <Route path="/" exact element={<Portfolio portfolio={portfolio} />}/>
@@ -165,7 +207,9 @@ function App() {
           <Route path="/contact-us" element={<ContactUs />}/>
         </Routes>
 
-        <TheFooter></TheFooter>
+        <TheFooter>
+            <NavBar containerClass="nav-bar-column" onOpenContactsPopup={handleOpenContactsPopup}></NavBar>
+        </TheFooter>
       </Router>
 </React.Fragment>
   );
