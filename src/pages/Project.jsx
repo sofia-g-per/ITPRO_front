@@ -1,10 +1,14 @@
-// import {withRouter} from 'react-router-dom'
+import {useParams} from 'react-router-dom'
+import {useState} from 'react'
 import '../css/pages/project.css'
 import ProjectImageCard from '../components/ProjectImageCard.jsx'
 import PlatformList from '../components/PlatformList.jsx'
 
 
-function Project({project}) {
+function Project({portfolio}) {
+  const params = useParams();
+  const cat = portfolio.find(cat => cat.title === params.category_title)
+  const project = cat.projects.find(project => project.id == parseInt(params.id) );
 
   return (
     <div className='project-page-wrapper'>

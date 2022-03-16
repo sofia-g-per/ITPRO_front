@@ -48,6 +48,7 @@ function Portfolio({portfolio}) {
                         portfolio.find(cat=> cat.id === currentCategory).projects.map( project =>
                             <ProjectCard 
                                 key={project.id} 
+                                categoryTitle={portfolio.find(cat=> cat.id === currentCategory).title}
                                 project={project}>
                             </ProjectCard>
                         )

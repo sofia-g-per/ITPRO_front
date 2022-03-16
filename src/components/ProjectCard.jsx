@@ -3,8 +3,7 @@ import {Link} from 'react-router-dom';
 import '../css/project-card.css'
 import PlatformList from './PlatformList.jsx'
 
-export default function ProjectCard({project}) {
-  console.log(project.images[0]);
+export default function ProjectCard({categoryTitle, project}) {
   return (
     <div className='project-card'>
         <div className='project-card__image-container'>
@@ -16,7 +15,7 @@ export default function ProjectCard({project}) {
             <h3 className='tertiary-heading'>{project.title}</h3>
             <PlatformList platforms={project.platforms}></PlatformList>
             <p className='basic-text'>{project.description}</p>
-            <Link className='link--blue' to='/project'>Подробнее</Link>
+            <Link className='link--blue' to={`/project/${categoryTitle}/${project.id}`}>Подробнее</Link>
         </div>
     </div>
   )
