@@ -1,6 +1,5 @@
 .our-customers {
 	display: flex;
-	
 	min-height: 46rem;
 }
 
@@ -10,8 +9,10 @@
 
 .background-img {
 	position: absolute;
-    z-index:-1;
-
+	z-index:-1;
+	object-fit: cover;
+	width: 100%;
+	height: 46rem;
 }
 
 .customers-text-container {
@@ -20,4 +21,3 @@
 	padding: 0 14rem;
 	justify-content: end;
 }
-

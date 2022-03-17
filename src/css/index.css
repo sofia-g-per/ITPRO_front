@@ -4,6 +4,7 @@ html{
   --font-family: Montserrat, sans-serif;
   --text-font-size: 1.8rem;
   --section-title-font-size: 4rem;
+  --text-title-font-size: 2.8rem;
   --page-title-font-size: 7rem;
 
   --color-black: rgb(0, 0, 0);
@@ -70,6 +71,12 @@ body {
   font-size: var(--section-title-font-size);
   font-weight: 600;
   line-height: 4.9rem;
+}
+
+.tertiary-heading {
+  font-size: var(--text-title-font-size);
+  font-weight: 500;
+  line-height: 3.3rem;
 }
 
 .basic-text {

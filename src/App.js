@@ -3,6 +3,8 @@ import TheFooter from './components/TheFooter.jsx';
 import TheHeader from './components/TheHeader.jsx';
 import DevWithArVr from './components/DevWithArVr.jsx';
 import OurCustomers from './components/OurCustomers.jsx';
+import LogoSection from './components/LogoSection.jsx';
+import StagesOfDevelopment from './components/StagesOfDevelopment.jsx';
 
 function App() {
   const portfolio = [
@@ -129,6 +131,8 @@ function App() {
       <TheHeader></TheHeader>
       <DevWithArVr></DevWithArVr>
       <OurCustomers></OurCustomers>
+      <LogoSection></LogoSection>
+      <StagesOfDevelopment></StagesOfDevelopment>
       <ContactUs></ContactUs>
       <TheFooter></TheFooter>
     </div>
