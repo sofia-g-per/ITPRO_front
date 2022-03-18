@@ -173,11 +173,19 @@ body {
 	/*padding: 65px 0 65px 0;*/
 }
 
-.basic-button--purple{
-  background-color: var(--color-accent-purple--dark);
+.basic-button{
   border: none;
   padding: 2vh 0;
   cursor: pointer;
   width: 100%;
+}
+
+.basic-button--purple{
+  background-color: var(--color-accent-purple--dark);
+
+}
+
+.basic-button--blue{
+  background-color: var(--color-accent-blue);
 }
 

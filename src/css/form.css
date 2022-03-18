@@ -4,7 +4,7 @@
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    padding: 0 7%;
+    padding: 0 5%;
     gap: 4.8vh;
 
 }
@@ -81,4 +81,7 @@
     padding-left: 2.4rem;
 }
 
-
+/* для страницы проекта */
+.project-page__cta__form{
+    justify-content: flex-start !important;
+}

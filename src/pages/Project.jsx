@@ -3,6 +3,7 @@ import {useState} from 'react'
 import '../css/pages/project.css'
 import ProjectImageCard from '../components/ProjectImageCard.jsx'
 import PlatformList from '../components/PlatformList.jsx'
+import OrderForm from '../components/OrderForm'
 
 
 function Project({portfolio}) {
@@ -29,8 +30,21 @@ function Project({portfolio}) {
       <div className='project-video'>
         <iframe src={project.video} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
       </div>
+      <section className="split-middle-flex project-page__cta">
+        <div className='project-page__cta__text-container'>
+            <h2 className='secondary-heading'>Свяжитесь с нами</h2>
+            <p className='basic-text'>
+                Проектируем промышленные симуляторы, игровой контент 
+                  в виртуальной и дополненной реальности. Снижаем расходы за счет автоматизации, 
+                  оптимизации мобильных приложений и веб-сервисов.
+            </p>
+        </div>
+        <OrderForm 
+          containerClass='project-page__cta__form'
+          buttonClass='basic-button--blue'
+        ></OrderForm>
+      </section>
     </div>
-    
   )
 }
 
