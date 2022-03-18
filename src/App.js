@@ -15,6 +15,7 @@ import ContactsPopup from './components/Popups/ContactsPopup.jsx';
 import TestRequestPopup from './components/Popups/TestRequestPopup.jsx';
 import FormSubmittedPopup from './components/Popups/FormSubmittedPopup.jsx';
 import DevWithArVr from './components/DevWithArVr.jsx';
+import StagesOfDevScroll from './components/StagesOfDevScroll.jsx';
 
 function App() {
     let portfolioOLD = [
@@ -287,7 +288,7 @@ function App() {
         </TheHeader>
 
         <Routes>
-          <Route path="/" exact element={<Portfolio portfolio={portfolio} />}/>
+          <Route path="/" exact element={<StagesOfDevScroll />}/>
           <Route path="/portfolio" element={<Portfolio portfolio={portfolio} />}/>
           {/* <Route path="/project" element={<Project project={portfolio[0].projects[0]} />}/> */}
           <Route path="/project/:category_title/:id" element={<Project portfolio={portfolio} />}/>
