@@ -8,8 +8,8 @@ import FileInput from './Form/FileInput.jsx'
 import BasicButton from './UI/BasicButton.jsx'
 import '../css/form.css'
 
-
 export default function OrderForm({containerClass, buttonClass}) {
+
     const [formFields, updateFormFields] = useState(   
         [
             {
@@ -86,6 +86,7 @@ export default function OrderForm({containerClass, buttonClass}) {
                 updateFormFields(updatedFormFields);
             }
         }
+
     }
 
     const validateEmail = (fieldIndex) => {
@@ -97,8 +98,10 @@ export default function OrderForm({containerClass, buttonClass}) {
         let fieldIndex = updatedFormFields.findIndex(field=> field.fieldName === e.target.name);
         updatedFormFields[fieldIndex].value = e.target.value;
         updateFormFields(updatedFormFields);
+        console.log(e.target.value);
 
         validateFilled(fieldIndex);
+        console.log(e.target.value);
         if(!formFields[fieldIndex].error & formFields.fieldName === 'email'){
 
         }
@@ -132,7 +135,9 @@ export default function OrderForm({containerClass, buttonClass}) {
             ></TextInput>
         </Formfield>
         <Formfield comment={formFields[4].comment}>
-            <FileInput fieldData={formFields[4]}></FileInput>
+            <FileInput fieldData={formFields[4]}
+                onChange={handleChange}
+            ></FileInput>
         </Formfield>
         <div>
             <BasicButton title="Отправить" buttonClass={buttonClass}></BasicButton>

@@ -13,7 +13,12 @@ html{
   --color-accent-blue: #2FA4C9;
   --color-accent-pink: #DD345D;
   --color-accent-purple: #A768BA;
-  --color-accent-purple--dark: #633974;
+  --color-purple--dark: #76458a;
+  --color-purple--darker: #633974;
+
+  --color--blue-dark:#377E95;
+  --color--blue-darker: #1F4B59;
+  ;
 
   --popup-padding: 3.5rem;
 
@@ -57,6 +62,10 @@ body {
 }
 
 .visually-hidden{
+  display: none !important;
+}
+
+.visually-hidden * {
   display: none !important;
 }
 
@@ -145,6 +154,16 @@ body {
   width: 50vw;
 }
 
+@media (max-width: 800px){
+  .split-middle-flex {
+    flex-direction: column;
+  }
+  
+  .split-middle-flex>* {
+    width: 100vw;
+  }
+}
+
 .align-last-to-bottom{
   display: flex;
   flex-direction: column;
@@ -178,14 +197,30 @@ body {
   padding: 2vh 0;
   cursor: pointer;
   width: 100%;
+  transition: all .4s;
 }
 
 .basic-button--purple{
-  background-color: var(--color-accent-purple--dark);
+  background-color: var(--color-accent-purple);
+}
 
+.basic-button--purple:hover{
+  background-color: var(--color-purple--dark);
+}
+
+.basic-button--purple:active{
+  background-color: var(--color-purple--darker);
 }
 
 .basic-button--blue{
   background-color: var(--color-accent-blue);
+}
+
+.basic-button--blue:hover{
+  background-color: var(--color-blue-dark);
+}
+
+.basic-button--blue:active{
+  background-color: var(--color-blue-darker);
 }
 
