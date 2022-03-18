@@ -18,12 +18,6 @@
     padding-top: 1rem;
 }
 
-.form__field--error,
-.form__field--error:active{
-    color: var(--color-accent-pink) !important;
-    border-color: var(--color-accent-pink) !important;
-}
-
 .form__input,
 .form__select{
     background-color: transparent;
@@ -31,7 +25,7 @@
     border-bottom: solid 1px;
     color: var(--color-white);
     border-color: var(--color-grey);
-    transition: all .5s;
+    transition: all .3s;
     padding: 1.1rem;
     line-height: 0;
 
@@ -47,6 +41,7 @@
 
 .form__input::placeholder{
     color: var(--color-grey);
+    transition: all .3s;
 }
 
 .form__select{
@@ -61,7 +56,7 @@
 }
 
 .form__file-wrapper,
-.form__file-label-wrapper{
+.form__file-label-wrapper label{
     cursor: pointer;
 }
 
@@ -79,6 +74,16 @@
 
 .form__file-label-wrapper label{
     padding-left: 2.4rem;
+}
+
+.form__field--error,
+.form__field--error:active{
+    color: var(--color-accent-pink) !important;
+    border-color: var(--color-accent-pink) !important;
+}
+
+.form__field--error::placeholder{
+    color: var(--color-accent-pink) !important;
 }
 
 /* для страницы проекта */

@@ -14,12 +14,14 @@ export default function OrderForm({containerClass, buttonClass}) {
         [
             {
                 title: 'Имя',
+                fieldName: 'title',
                 value: '',
                 comment: '',
                 error: false,
             },
             {
                 title: 'Почта',
+                fieldName: 'email',
                 value: '',
                 comment: '',
                 error: false,
@@ -27,29 +29,37 @@ export default function OrderForm({containerClass, buttonClass}) {
             },
             {
                 title: 'Технология',
+                fieldName: 'technology_id',
                 value: '',
                 comment: '',
                 error: false,
                 options: [
                     {
                         title: 'AR',
+                        value: '',
                     },
                     {
                         title: 'VR',
+                        value: '',
+
                     },
                     {
                         title: '360',
+                        value: '',
+
                     },
                 ]
             },
             {
                 title: 'Название проекта',
+                fieldName: 'project_title',
                 value: '',
                 comment: '',
                 error: false,
             },
             {
                 title: 'Загрузить описание проекта',
+                fieldName: 'file',
                 value: '',
                 comment: 'Поддерживаемые форматы: PDF, DOCX, PNG, JPEG ',
                 error: false,
@@ -57,24 +67,14 @@ export default function OrderForm({containerClass, buttonClass}) {
         ] 
     );
     const [formErrors, updateFormErrors] = useState([]);
-
-    const handleChange = (e) => {
-        let updatedFormFields = formFields;
-
-        let fieldIndex = updatedFormFields.findIndex(field=> field.title === e.target.name);
-        updatedFormFields[fieldIndex].value = e.target.value;
-        updateFormFields(updatedFormFields);
-
-        validateFilled(fieldIndex);
-    }
-
+    
     const validateFilled = (fieldIndex) => {
-        const {value, title, error} = formFields[fieldIndex];
-        let errorIndex = formErrors.findIndex(errorName => errorName === title);
+        const {value, fieldName, error} = formFields[fieldIndex];
+        let errorIndex = formErrors.findIndex(errorName => errorName === fieldName);
         let updatedFormFields = formFields;
         if (errorIndex === -1){
             if( value.trim() === ''){
-                updateFormErrors([...formErrors , title]);
+                updateFormErrors([...formErrors , fieldName]);
 
                 updatedFormFields[fieldIndex].error = true; 
                 updateFormFields(updatedFormFields);
@@ -87,6 +87,23 @@ export default function OrderForm({containerClass, buttonClass}) {
             }
         }
     }
+
+    const validateEmail = (fieldIndex) => {
+    }
+
+    const handleChange = (e) => {
+        let updatedFormFields = formFields;
+
+        let fieldIndex = updatedFormFields.findIndex(field=> field.fieldName === e.target.name);
+        updatedFormFields[fieldIndex].value = e.target.value;
+        updateFormFields(updatedFormFields);
+
+        validateFilled(fieldIndex);
+        if(!formFields[fieldIndex].error & formFields.fieldName === 'email'){
+
+        }
+    }
+
 
   return (
     <form className={`${containerClass} form`}>
