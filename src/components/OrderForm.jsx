@@ -16,17 +16,20 @@ export default function OrderForm({containerClass, buttonClass}) {
                 title: 'Имя',
                 value: '',
                 comment: '',
+                error: false,
             },
             {
                 title: 'Почта',
                 value: '',
                 comment: '',
+                error: false,
+
             },
             {
                 title: 'Технология',
                 value: '',
                 comment: '',
-
+                error: false,
                 options: [
                     {
                         title: 'AR',
@@ -43,27 +46,73 @@ export default function OrderForm({containerClass, buttonClass}) {
                 title: 'Название проекта',
                 value: '',
                 comment: '',
+                error: false,
             },
             {
                 title: 'Загрузить описание проекта',
                 value: '',
-                comment: 'Поддерживаемые форматы: PDF, DOCX, PNG, JPEG '
+                comment: 'Поддерживаемые форматы: PDF, DOCX, PNG, JPEG ',
+                error: false,
             },
         ] 
     );
+    const [formErrors, updateFormErrors] = useState([]);
+
+    const handleChange = (e) => {
+        let updatedFormFields = formFields;
+
+        let fieldIndex = updatedFormFields.findIndex(field=> field.title === e.target.name);
+        updatedFormFields[fieldIndex].value = e.target.value;
+        updateFormFields(updatedFormFields);
+
+        validateFilled(fieldIndex);
+    }
+
+    const validateFilled = (fieldIndex) => {
+        const {value, title, error} = formFields[fieldIndex];
+        let errorIndex = formErrors.findIndex(errorName => errorName === title);
+        let updatedFormFields = formFields;
+        if (errorIndex === -1){
+            if( value.trim() === ''){
+                updateFormErrors([...formErrors , title]);
+
+                updatedFormFields[fieldIndex].error = true; 
+                updateFormFields(updatedFormFields);
+            }else {
+                const updatedFormErrors = formErrors.splice(errorIndex, 1);
+                updateFormErrors(updatedFormErrors);
+
+                updatedFormFields[fieldIndex].error = false; 
+                updateFormFields(updatedFormFields);
+            }
+        }
+    }
+
   return (
     <form className={`${containerClass} form`}>
         <Formfield comment={formFields[0].comment}>
-            <TextInput fieldData={formFields[0]}></TextInput>
+            <TextInput 
+                fieldData={formFields[0]}
+                onChange={handleChange}
+            ></TextInput>
         </Formfield>
         <Formfield comment={formFields[1].comment}>
-            <TextInput fieldData={formFields[1]}></TextInput>
+            <TextInput 
+                fieldData={formFields[1]}
+                onChange={handleChange}
+            ></TextInput>
         </Formfield>
         <Formfield comment={formFields[2].comment}>
-            <FormSelect fieldData={formFields[2]}></FormSelect>
+            <FormSelect 
+                fieldData={formFields[2]}
+                onChange={handleChange}
+            ></FormSelect>
         </Formfield>
         <Formfield comment={formFields[3].comment}>
-            <TextInput fieldData={formFields[3]}></TextInput>
+            <TextInput 
+                fieldData={formFields[3]}
+                onChange={handleChange}
+            ></TextInput>
         </Formfield>
         <Formfield comment={formFields[4].comment}>
             <FileInput fieldData={formFields[4]}></FileInput>
