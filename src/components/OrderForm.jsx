@@ -68,7 +68,34 @@ export default function OrderForm({containerClass, buttonClass}) {
     );
     const [formErrors, updateFormErrors] = useState([]);
     
+    const addError = (fieldIndex) => {
+        console.log(formFields[fieldIndex]);
+        let {value, fieldName} = formFields[fieldIndex];
+        let errorIndex = formErrors.findIndex(errorName => errorName === fieldName);
+        let updatedFormFields = formFields;
+        if (errorIndex === -1){
+            updateFormErrors([...formErrors , fieldName]);
+            updatedFormFields[fieldIndex].error = true; 
+            updateFormFields(updatedFormFields);
+        }
+        console.log(formFields[fieldIndex]);
+
+    }
+
+    const removeError = (fieldIndex) => {
+        const {value, fieldName} = formFields[fieldIndex];
+        let errorIndex = formErrors.findIndex(errorName => errorName === fieldName);
+        let updatedFormFields = formFields;
+        if (errorIndex === -1){
+            const updatedFormErrors = formErrors.splice(errorIndex, 1);
+            updateFormErrors(updatedFormErrors);
+            updatedFormFields[fieldIndex].error = false; 
+            updateFormFields(updatedFormFields);
+        }
+    }
+
     const validateFilled = (fieldIndex) => {
+        console.log(formFields[fieldIndex], fieldIndex);
         const {value, fieldName, error} = formFields[fieldIndex];
         let errorIndex = formErrors.findIndex(errorName => errorName === fieldName);
         let updatedFormFields = formFields;
@@ -90,52 +117,63 @@ export default function OrderForm({containerClass, buttonClass}) {
     }
 
     const validateEmail = (fieldIndex) => {
+        
+    }
+
+    const validateFile = (fieldIndex, file) => {
+        console.log('validating', file.type);
+        const types = ["image/jpeg", "image/png", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "application/pdf","application/msword"];
+        if(!types.includes(file.type)) {
+            console.log('error')
+            addError(fieldIndex);
+        }
     }
 
     const handleChange = (e) => {
         let updatedFormFields = formFields;
-
         let fieldIndex = updatedFormFields.findIndex(field=> field.fieldName === e.target.name);
         updatedFormFields[fieldIndex].value = e.target.value;
+        console.log(formFields[fieldIndex].fieldName === 'file', formFields[fieldIndex].fieldName);
         updateFormFields(updatedFormFields);
-        console.log(e.target.value);
-        console.log(updatedFormFields[fieldIndex]);
         validateFilled(fieldIndex);
-        console.log(e.target.value);
         if(!formFields[fieldIndex].error & formFields.fieldName === 'email'){
-
+            validateEmail(fieldIndex);
+        }
+        if (formFields[fieldIndex].fieldName === 'file'){
+            console.log('entering validation');
+            validateFile(fieldIndex, e.target.files[0]);
         }
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('submitted');
-        let submittedData = new FormData;
-        formFields.forEach((formField) => {
-            if(formField.fieldName != 'file'){
-                submittedData.append(formField.fieldName, formField.value.trim());
-            }else{
+        // console.log('submitted');
+        // let submittedData = new FormData;
+        // formFields.forEach((formField) => {
+        //     if(formField.fieldName != 'file'){
+        //         submittedData.append(formField.fieldName, formField.value.trim());
+        //     }else{
 
-            }
-            console.log(formField, submittedData)
-        });
-        console.log(submittedData);
-        axios({
-            method: 'post',
-            url: 'http://itpro/send-order', 
-            data: submittedData,
-            headers: {"Content-Type": "multipart/form-data"}
-        })
-        .then( response =>
-        {
-            console.log(response);
+        //     }
+        //     console.log(formField, submittedData)
+        // });
+        // console.log(submittedData);
+        // axios({
+        //     method: 'post',
+        //     url: 'http://itpro/send-order', 
+        //     data: submittedData,
+        //     headers: {"Content-Type": "multipart/form-data"}
+        // })
+        // .then( response =>
+        // {
+        //     console.log(response);
 
-        })
-        .catch(response => 
-        { 
-            console.log(response.message);
-        });
-        console.log(submittedData)
+        // })
+        // .catch(response => 
+        // { 
+        //     console.log(response.message);
+        // });
+        // console.log(submittedData)
     }
 
 

@@ -55,6 +55,11 @@
     padding: 4.4vh 0;
 }
 
+.form__file-wrapper.form__field--error{
+    border-color: var(--color-accent-pink);
+}
+
+
 .form__file-wrapper,
 .form__file-label-wrapper label{
     cursor: pointer;
@@ -91,29 +96,3 @@
     justify-content: flex-start !important;
 }
 
-
-.dzu-dropzone{
-    border: dashed 1px var(--color-grey);
-    display: grid;
-    justify-content: center;
-    position: relative;
-}
-
-.dzu-inputLabel{
-    padding: 4.4vh 0;
-    
-}
-
-.dzu-inputLabelWithFiles{
-    font-size: 1rem;
-    color: var(--color-grey);
-    grid-row: 2;
-}
-
-.dzu-input{
-    display: none;
-}
-
-.dzu-previewContainer>*{
-    max-width: 30%;
-}
