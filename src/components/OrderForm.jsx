@@ -10,7 +10,7 @@ import '../css/form.css'
 import axios from 'axios'
 
 export default function OrderForm({containerClass, buttonClass}) {
-
+    
     const [formFields, updateFormFields] = useState(   
         [
             {
@@ -37,16 +37,16 @@ export default function OrderForm({containerClass, buttonClass}) {
                 options: [
                     {
                         title: 'AR',
-                        value: '',
+                        value: '1',
                     },
                     {
                         title: 'VR',
-                        value: '',
+                        value: '2',
 
                     },
                     {
                         title: '360',
-                        value: '',
+                        value: '3',
 
                     },
                 ]
@@ -58,13 +58,13 @@ export default function OrderForm({containerClass, buttonClass}) {
                 comment: '',
                 error: false,
             },
-            {
-                title: 'Загрузить описание проекта',
-                fieldName: 'file',
-                value: '',
-                comment: 'Поддерживаемые форматы: PDF, DOCX, PNG, JPEG ',
-                error: false,
-            },
+            // {
+            //     title: 'Загрузить описание проекта',
+            //     fieldName: 'file',
+            //     value: '',
+            //     comment: 'Поддерживаемые форматы: PDF, DOCX, PNG, JPEG ',
+            //     error: false,
+            // },
         ] 
     );
     const [formErrors, updateFormErrors] = useState([]);
@@ -100,7 +100,7 @@ export default function OrderForm({containerClass, buttonClass}) {
         updatedFormFields[fieldIndex].value = e.target.value;
         updateFormFields(updatedFormFields);
         console.log(e.target.value);
-
+        console.log(updatedFormFields[fieldIndex]);
         validateFilled(fieldIndex);
         console.log(e.target.value);
         if(!formFields[fieldIndex].error & formFields.fieldName === 'email'){
@@ -111,14 +111,17 @@ export default function OrderForm({containerClass, buttonClass}) {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('submitted');
-        let submittedData = new FormData();
+        let submittedData = {};
         formFields.forEach((formField) => {
-            submittedData.append(formField.name, formField.value);
+            submittedData[formField.fieldName] = formField.value;
+            console.log(formField, submittedData)
         });
-        axios.post({
+        console.log(submittedData);
+        axios({
+            method: 'post',
             url: 'http://itpro/send-order', 
-            method: "post",
-            data: submittedData
+            data: submittedData,
+
         })
         .then( response =>
         {
@@ -127,8 +130,9 @@ export default function OrderForm({containerClass, buttonClass}) {
         })
         .catch(response => 
         { 
-            console.log(response.error);
+            console.log(response.message);
         });
+        console.log(submittedData)
     }
 
 
@@ -136,7 +140,7 @@ export default function OrderForm({containerClass, buttonClass}) {
     <form 
         className={`${containerClass} form`} 
         onSubmit={handleSubmit} 
-        encType="multipart/form-data"
+        // encType="multipart/form-data"
         method='post'
         >
         <Formfield comment={formFields[0].comment}>
@@ -163,11 +167,11 @@ export default function OrderForm({containerClass, buttonClass}) {
                 onChange={handleChange}
             ></TextInput>
         </Formfield>
-        <Formfield comment={formFields[4].comment}>
+        {/* <Formfield comment={formFields[4].comment}>
             <FileInput fieldData={formFields[4]}
                 onChange={handleChange}
             ></FileInput>
-        </Formfield>
+        </Formfield> */}
         <div>
             <BasicButton title="Отправить" type="submit" buttonClass={buttonClass}></BasicButton>
             <p className='text--small form__field__error-label'>Нажимая кнопку “Отправить” Вы даёте согласие на обработку своих персональных данных.</p>

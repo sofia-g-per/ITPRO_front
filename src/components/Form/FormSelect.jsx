@@ -9,8 +9,8 @@ function contactUs({fieldData, onChange}){
       name={fieldData.fieldName} aria-label={fieldData.title}
     >
       {!fieldData.value && <option value={fieldData.title} selected className='visually-hidden'>{fieldData.title}</option>}
-      {fieldData.options.map( ({title}) => 
-          <option className='basic-text' value={title} key={title}> {title} </option>
+      {fieldData.options.map( ({title, value}) => 
+          <option className='basic-text' value={value} key={value}> {title} </option>
         )
       }
     </select>
