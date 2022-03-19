@@ -7,7 +7,7 @@ export default function fileInput({fieldData}) {
     return (
         <Dropzone
           // getUploadParams={getUploadParams}
-          onChangeStatus={onChange}
+          onChangeStatus={()=>{onChange()}}
           aria-label={title}
           inputContent={title}
           inputWithFilesContent='Файл прикреплён'

@@ -58,13 +58,13 @@ export default function OrderForm({containerClass, buttonClass}) {
                 comment: '',
                 error: false,
             },
-            // {
-            //     title: 'Загрузить описание проекта',
-            //     fieldName: 'file',
-            //     value: '',
-            //     comment: 'Поддерживаемые форматы: PDF, DOCX, PNG, JPEG ',
-            //     error: false,
-            // },
+            {
+                title: 'Загрузить описание проекта',
+                fieldName: 'file',
+                value: '',
+                comment: 'Поддерживаемые форматы: PDF, DOCX, PNG, JPEG ',
+                error: false,
+            },
         ] 
     );
     const [formErrors, updateFormErrors] = useState([]);
@@ -111,9 +111,13 @@ export default function OrderForm({containerClass, buttonClass}) {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('submitted');
-        let submittedData = {};
+        let submittedData = new FormData;
         formFields.forEach((formField) => {
-            submittedData[formField.fieldName] = formField.value;
+            if(formField.fieldName != 'file'){
+                submittedData.append(formField.fieldName, formField.value.trim());
+            }else{
+
+            }
             console.log(formField, submittedData)
         });
         console.log(submittedData);
@@ -121,7 +125,7 @@ export default function OrderForm({containerClass, buttonClass}) {
             method: 'post',
             url: 'http://itpro/send-order', 
             data: submittedData,
-
+            headers: {"Content-Type": "multipart/form-data"}
         })
         .then( response =>
         {
@@ -140,7 +144,7 @@ export default function OrderForm({containerClass, buttonClass}) {
     <form 
         className={`${containerClass} form`} 
         onSubmit={handleSubmit} 
-        // encType="multipart/form-data"
+        encType="multipart/form-data"
         method='post'
         >
         <Formfield comment={formFields[0].comment}>
@@ -167,11 +171,11 @@ export default function OrderForm({containerClass, buttonClass}) {
                 onChange={handleChange}
             ></TextInput>
         </Formfield>
-        {/* <Formfield comment={formFields[4].comment}>
+        <Formfield comment={formFields[4].comment}>
             <FileInput fieldData={formFields[4]}
                 onChange={handleChange}
             ></FileInput>
-        </Formfield> */}
+        </Formfield>
         <div>
             <BasicButton title="Отправить" type="submit" buttonClass={buttonClass}></BasicButton>
             <p className='text--small form__field__error-label'>Нажимая кнопку “Отправить” Вы даёте согласие на обработку своих персональных данных.</p>
