@@ -7,6 +7,7 @@ import FormSelect from './Form/FormSelect.jsx'
 import FileInput from './Form/FileInput.jsx'
 import BasicButton from './UI/BasicButton.jsx'
 import '../css/form.css'
+import axios from 'axios'
 
 export default function OrderForm({containerClass, buttonClass}) {
 
@@ -14,7 +15,7 @@ export default function OrderForm({containerClass, buttonClass}) {
         [
             {
                 title: 'Имя',
-                fieldName: 'title',
+                fieldName: 'client_name',
                 value: '',
                 comment: '',
                 error: false,
@@ -107,9 +108,37 @@ export default function OrderForm({containerClass, buttonClass}) {
         }
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log('submitted');
+        let submittedData = new FormData();
+        formFields.forEach((formField) => {
+            submittedData.append(formField.name, formField.value);
+        });
+        axios.post({
+            url: 'http://itpro/send-order', 
+            method: "post",
+            data: submittedData
+        })
+        .then( response =>
+        {
+            console.log(response);
+
+        })
+        .catch(response => 
+        { 
+            console.log(response.error);
+        });
+    }
+
 
   return (
-    <form className={`${containerClass} form`}>
+    <form 
+        className={`${containerClass} form`} 
+        onSubmit={handleSubmit} 
+        encType="multipart/form-data"
+        method='post'
+        >
         <Formfield comment={formFields[0].comment}>
             <TextInput 
                 fieldData={formFields[0]}
@@ -140,7 +169,7 @@ export default function OrderForm({containerClass, buttonClass}) {
             ></FileInput>
         </Formfield>
         <div>
-            <BasicButton title="Отправить" buttonClass={buttonClass}></BasicButton>
+            <BasicButton title="Отправить" type="submit" buttonClass={buttonClass}></BasicButton>
             <p className='text--small form__field__error-label'>Нажимая кнопку “Отправить” Вы даёте согласие на обработку своих персональных данных.</p>
         </div>
     </form>

@@ -57,7 +57,7 @@ export default function TestRequestPopup() {
             </a>
         </div>
         <form className='test-request-popup__form'>
-            <div className='form'>
+            <div className='form' enctype="multipart/form-data">
                 <Formfield comment={formFields[0].comment}>
                     <FormSelect fieldData={formFields[0]}></FormSelect>
                 </Formfield>
