@@ -1,18 +1,17 @@
+import {Route, Routes, BrowserRouter as Router} from 'react-router-dom';
+import React from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+
 import ContactUs from './pages/ContactUs.jsx';
 import Portfolio from './pages/Portfolio.jsx';
 import Project from './pages/Project.jsx';
 import TheHeader from './components/theHeader.jsx';
 import TheFooter from './components/theFooter.jsx';
 import NavBar from './components/NavBar.jsx';
-
-import {Route, Routes, BrowserRouter as Router} from 'react-router-dom';
-import React from 'react';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-
 import Popup from './components/UI/Popup';
-import ContactsPopup from './components/Popups/ContactsPopup.jsx';
 import TestRequestPopup from './components/Popups/TestRequestPopup.jsx';
+import ContactsPopup from './components/Popups/ContactsPopup.jsx';
 import FormSubmittedPopup from './components/Popups/FormSubmittedPopup.jsx';
 import DevWithArVr from './components/DevWithArVr.jsx';
 import StagesOfDevScroll from './components/StagesOfDevScroll.jsx';
@@ -265,10 +264,10 @@ function App() {
     const handleOpenContactsPopup = () => {
         updateIsContactsPopupOpen(true);
     }
-
     const handleClosePopup = () => {
         updateIsContactsPopupOpen(false);
     }
+
 
   return (
     <React.Fragment>
@@ -276,9 +275,7 @@ function App() {
          {/* <Popup containerClass="submitted-popup-wrapper">
             <FormSubmittedPopup></FormSubmittedPopup>
         </Popup> */}
-        {/* <Popup containerClass="test-request-popup-wrapper">
-            <TestRequestPopup></TestRequestPopup>
-        </Popup> */}
+
         {
             isContactsPopupOpen && 
             <Popup onClosePopup={handleClosePopup} containerClass="contacts-popup">
@@ -291,7 +288,7 @@ function App() {
         </TheHeader>
 
         <Routes>
-          <Route path="/" exact element={<StagesOfDevScroll />}/>
+          <Route path="/" exact element={<TestRequestPopup />}/>
           <Route path="/portfolio" element={<Portfolio portfolio={portfolio} />}/>
           {/* <Route path="/project" element={<Project project={portfolio[0].projects[0]} />}/> */}
           <Route path="/project/:category_title/:id" element={<Project portfolio={portfolio} />}/>

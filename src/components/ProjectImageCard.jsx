@@ -2,7 +2,7 @@ import React from 'react'
 import '../css/project-card.css'
 
 
-export default function ProjectImageCard({image}) {
+export default function ProjectImageCard({image, onOpenPopup}) {
 
   return (
     <div className='project-card'>
@@ -13,7 +13,7 @@ export default function ProjectImageCard({image}) {
         <div className='project-card__text-container'>
             <h3 className='tertiary-heading'>{image.title}</h3>
             <p className='basic-text'>{image.description}</p>
-            <a className='link--blue' href="#">Подробнее</a>
+            <p className='link--blue' onClick={onOpenPopup}>Подробнее</p>
         </div>
     </div>
   )

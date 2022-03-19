@@ -4,12 +4,23 @@ import '../css/pages/project.css'
 import ProjectImageCard from '../components/ProjectImageCard.jsx'
 import PlatformList from '../components/PlatformList.jsx'
 import OrderForm from '../components/OrderForm'
-
+import TestRequestPopup from '../components/Popups/TestRequestPopup.jsx';
+import Popup from '../components/UI/Popup.jsx';
 
 function Project({portfolio}) {
   const params = useParams();
   const cat = portfolio.find(cat => cat.title === params.category_title)
   const project = cat.projects.find(project => project.id == parseInt(params.id) );
+
+  const [isTestReuqestPopupOpen, updateisTestReuqestPopupOpen] = useState(false);
+  const handleOpenTestReuqestPopup = (e) => {
+    console.log('handling');
+    e.preventDefault();
+    updateisTestReuqestPopupOpen(true);
+  }
+  const handleClosePopup = () => {
+    updateisTestReuqestPopupOpen(false);
+  }
 
   return (
     <div className='project-page-wrapper'>
@@ -22,7 +33,7 @@ function Project({portfolio}) {
         <div className='project-info__images'>
           {
             project.images.map(image =>
-              <ProjectImageCard image={image} key={image.title}></ProjectImageCard>
+              <ProjectImageCard image={image} onOpenPopup={handleOpenTestReuqestPopup} key={image.title}></ProjectImageCard>
             )
           }
         </div>
@@ -44,6 +55,12 @@ function Project({portfolio}) {
           buttonClass='basic-button--blue'
         ></OrderForm>
       </section>
+      {
+            isTestReuqestPopupOpen &&
+            <Popup containerClass="test-request-popup-wrapper" onClosePopup={handleClosePopup}>
+                <TestRequestPopup ></TestRequestPopup>
+            </Popup>
+        }
     </div>
   )
 }

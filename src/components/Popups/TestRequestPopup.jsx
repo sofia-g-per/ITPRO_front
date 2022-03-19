@@ -15,7 +15,6 @@ export default function TestRequestPopup() {
                 title: 'Проект',
                 value: '',
                 comment: '',
-
                 options: [
                     {
                         title: 'AR',
@@ -46,6 +45,67 @@ export default function TestRequestPopup() {
             },
         ] 
     );
+    const [formErrors, updateFormErrors] = useState([]);
+    
+    const checkError = (fieldIndex) => {
+        const {value, fieldName} = formFields[fieldIndex];
+        let errorIndex = formErrors.findIndex(errorName => errorName === fieldName);
+        if (errorIndex === -1){
+            return true
+        }
+        return false
+    }
+
+    const addError = (fieldIndex) => {
+        let {value, fieldName} = formFields[fieldIndex];
+        let updatedFormFields = formFields;
+        if (checkError(fieldIndex)){
+            updateFormErrors([...formErrors , fieldName]);
+            updatedFormFields[fieldIndex].error = true; 
+            updateFormFields(updatedFormFields);
+        }
+    }
+
+    const removeError = (fieldIndex) => {
+        const {value, fieldName} = formFields[fieldIndex];
+        let updatedFormFields = formFields;
+        if (!checkError(fieldIndex)){
+            let errorIndex = formErrors.findIndex(errorName => errorName === fieldName);
+            const updatedFormErrors = formErrors.splice(errorIndex, 1);
+            updateFormErrors(updatedFormErrors);
+            updatedFormFields[fieldIndex].error = false; 
+            updateFormFields(updatedFormFields);
+        }
+    }
+
+    const validateFilled = (fieldIndex) => {
+        const {value, fieldName, error} = formFields[fieldIndex];
+        let updatedFormFields = formFields;
+        if (checkError(fieldIndex)){
+            if( value.trim() === ''){
+                addError(fieldIndex);
+            }else {
+                removeError(fieldIndex);
+            }
+        }
+
+    }
+
+    const validateEmail = (fieldIndex) => {
+        
+    }
+
+    const handleChange = (e) => {
+        let updatedFormFields = formFields;
+        let fieldIndex = updatedFormFields.findIndex(field=> field.fieldName === e.target.name);
+        updatedFormFields[fieldIndex].value = e.target.value;
+        updateFormFields(updatedFormFields);
+        validateFilled(fieldIndex);
+        if(!formFields[fieldIndex].error & formFields.fieldName === 'email'){
+            validateEmail(fieldIndex);
+        }
+
+    }
   return (
     <div className='test-request-popup'>
         <div className='test-request-popup__text'>
@@ -58,20 +118,23 @@ export default function TestRequestPopup() {
         </div>
         <form className='test-request-popup__form'>
             <div className='form' enctype="multipart/form-data">
-                <Formfield comment={formFields[0].comment}>
-                    <FormSelect fieldData={formFields[0]}></FormSelect>
+                <Formfield formField={formFields[0]}>
+                    <FormSelect 
+                        fieldData={formFields[0]}
+                        onChange={handleChange}
+                    ></FormSelect>
                 </Formfield>
-                <Formfield comment={formFields[1].comment}>
+                <Formfield formField={formFields[1]} onChange={handleChange}>
                     <TextInput fieldData={formFields[1]}></TextInput>
                 </Formfield>
-                <Formfield comment={formFields[2].comment}>
+                <Formfield formField={formFields[2]} onChange={handleChange}>
                     <TextInput fieldData={formFields[2]}></TextInput>
                 </Formfield>
-                <Formfield comment={formFields[3].comment}>
+                <Formfield formField={formFields[3]} onChange={handleChange}>
                     <TextInput fieldData={formFields[3]}></TextInput>
                 </Formfield>
                 <div>
-                    <BasicButton title="Получить"></BasicButton>
+                    <BasicButton title="Получить" buttonClass="basic-button--purple"></BasicButton>
                     <p className='text--small form__field__error-label'>Нажимая кнопку "Получить" Вы даёте согласие на обработку своих персональных данных.</p>
                 </div>
             </div>

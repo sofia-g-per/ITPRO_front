@@ -1,6 +1,4 @@
 function Formfield({formField, children}) {
-  console.log(formField)
-
   return (
     <div className="form__field">
           {children} 
