@@ -68,11 +68,19 @@ export default function OrderForm({containerClass, buttonClass}) {
     );
     const [formErrors, updateFormErrors] = useState([]);
     
+    const checkError = (fieldIndex) => {
+        const {value, fieldName} = formFields[fieldIndex];
+        let errorIndex = formErrors.findIndex(errorName => errorName === fieldName);
+        if (errorIndex === -1){
+            return true
+        }
+        return false
+    }
+
     const addError = (fieldIndex) => {
         let {value, fieldName} = formFields[fieldIndex];
-        let errorIndex = formErrors.findIndex(errorName => errorName === fieldName);
         let updatedFormFields = formFields;
-        if (errorIndex === -1){
+        if (checkError(fieldIndex)){
             updateFormErrors([...formErrors , fieldName]);
             updatedFormFields[fieldIndex].error = true; 
             updateFormFields(updatedFormFields);
@@ -81,9 +89,9 @@ export default function OrderForm({containerClass, buttonClass}) {
 
     const removeError = (fieldIndex) => {
         const {value, fieldName} = formFields[fieldIndex];
-        let errorIndex = formErrors.findIndex(errorName => errorName === fieldName);
         let updatedFormFields = formFields;
-        if (errorIndex === -1){
+        if (!checkError(fieldIndex)){
+            let errorIndex = formErrors.findIndex(errorName => errorName === fieldName);
             const updatedFormErrors = formErrors.splice(errorIndex, 1);
             updateFormErrors(updatedFormErrors);
             updatedFormFields[fieldIndex].error = false; 
@@ -93,20 +101,12 @@ export default function OrderForm({containerClass, buttonClass}) {
 
     const validateFilled = (fieldIndex) => {
         const {value, fieldName, error} = formFields[fieldIndex];
-        let errorIndex = formErrors.findIndex(errorName => errorName === fieldName);
         let updatedFormFields = formFields;
-        if (errorIndex === -1){
+        if (checkError(fieldIndex)){
             if( value.trim() === ''){
-                updateFormErrors([...formErrors , fieldName]);
-
-                updatedFormFields[fieldIndex].error = true; 
-                updateFormFields(updatedFormFields);
+                addError(fieldIndex);
             }else {
-                const updatedFormErrors = formErrors.splice(errorIndex, 1);
-                updateFormErrors(updatedFormErrors);
-
-                updatedFormFields[fieldIndex].error = false; 
-                updateFormFields(updatedFormFields);
+                removeError(fieldIndex);
             }
         }
 
@@ -122,6 +122,9 @@ export default function OrderForm({containerClass, buttonClass}) {
             addError(fieldIndex);
         }else{
             removeError(fieldIndex);
+        }
+        if(checkError(fieldIndex)){
+            file.comment = "Файл прикреплён"
         }
     }
 
@@ -152,9 +155,7 @@ export default function OrderForm({containerClass, buttonClass}) {
             }else{
                 submittedData.append(formField.fieldName, formField.value);
             }
-            console.log(formField, submittedData)
         });
-        console.log(submittedData.entries());
         axios({
             method: 'post',
             url: 'http://itpro/send-order', 
@@ -170,7 +171,6 @@ export default function OrderForm({containerClass, buttonClass}) {
         { 
             console.log(response.message);
         });
-        console.log(submittedData)
     }
 
 
