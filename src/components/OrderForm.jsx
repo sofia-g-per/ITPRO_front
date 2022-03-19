@@ -9,8 +9,7 @@ import BasicButton from './UI/BasicButton.jsx'
 import '../css/form.css'
 import axios from 'axios'
 
-export default function OrderForm({containerClass, buttonClass}) {
-    
+export default function OrderForm({containerClass, buttonClass}) {  
     const [formFields, updateFormFields] = useState(   
         [
             {

@@ -16,6 +16,9 @@ import TestRequestPopup from './components/Popups/TestRequestPopup.jsx';
 import FormSubmittedPopup from './components/Popups/FormSubmittedPopup.jsx';
 import DevWithArVr from './components/DevWithArVr.jsx';
 import StagesOfDevScroll from './components/StagesOfDevScroll.jsx';
+import OurCustomers from './components/OurCustomers.jsx';
+import LogoSection from './components/LogoSection.jsx';
+import StagesOfDevelopment from './components/StagesOfDevelopment.jsx';
 
 function App() {
     let portfolioOLD = [
@@ -300,6 +303,15 @@ function App() {
         </TheFooter>
       </Router>
 </React.Fragment>
+    // <div className="App">
+    //   <TheHeader></TheHeader>
+    //   <DevWithArVr></DevWithArVr>
+    //   <OurCustomers></OurCustomers>
+    //   <LogoSection></LogoSection>
+    //   <StagesOfDevelopment></StagesOfDevelopment>
+    //   <ContactUs></ContactUs>
+    //   <TheFooter></TheFooter>
+    // </div>
   );
 }
 

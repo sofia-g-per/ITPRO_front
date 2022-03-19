@@ -1,19 +1,14 @@
-import React from 'react'
-import Dropzone from 'react-dropzone-uploader'
+import React, { Component } from 'react'
 
-export default function fileInput({fieldData}) {
+export default function fileInput({fieldData, onChange}) {
 
-    const {title, onChange} = fieldData;
+    const {title} = fieldData;
     return (
-        <Dropzone
-          // getUploadParams={getUploadParams}
-          onChangeStatus={()=>{onChange()}}
-          aria-label={title}
-          inputContent={title}
-          inputWithFilesContent='Файл прикреплён'
-          // onSubmit={onSubmit}
-          accept="image/*"
-        />
+      <div className='form__file-wrapper'>
+        <div className='form__file-label-wrapper'>
+          <label htmlFor={title} className='basic-text'>{title}</label>
+        </div>
+        <input onChange={onChange} id={title} className='visually-hidden' type="file" />
+      </div>
     )
-  
 }

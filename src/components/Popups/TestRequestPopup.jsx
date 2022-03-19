@@ -1,6 +1,6 @@
 import React from 'react'
 import {useState} from 'react'
-import TextInput from '../../components/Form/TextInput.jsx'
+import TextInput from '../Form/TextInput.jsx'
 import Formfield from '../../components/Form/Formfield.jsx'
 import FormSelect from '../../components/Form/FormSelect.jsx'
 import FileInput from '../../components/Form/FileInput.jsx'
