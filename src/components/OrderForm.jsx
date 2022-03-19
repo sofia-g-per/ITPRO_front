@@ -123,9 +123,12 @@ export default function OrderForm({containerClass, buttonClass}) {
         }else{
             removeError(fieldIndex);
         }
+        console.log('validating')
+        console.log(checkError(fieldIndex))
         if(checkError(fieldIndex)){
             file.comment = "Файл прикреплён"
         }
+        console.log('comment', file.comment);
     }
 
     const handleChange = (e) => {
@@ -181,31 +184,31 @@ export default function OrderForm({containerClass, buttonClass}) {
         encType="multipart/form-data"
         method='post'
         >
-        <Formfield comment={formFields[0].comment}>
+        <Formfield formField={formFields[0]}>
             <TextInput 
                 fieldData={formFields[0]}
                 onChange={handleChange}
             ></TextInput>
         </Formfield>
-        <Formfield comment={formFields[1].comment}>
+        <Formfield formField={formFields[1]}>
             <TextInput 
                 fieldData={formFields[1]}
                 onChange={handleChange}
             ></TextInput>
         </Formfield>
-        <Formfield comment={formFields[2].comment}>
+        <Formfield formField={formFields[2]}>
             <FormSelect 
                 fieldData={formFields[2]}
                 onChange={handleChange}
             ></FormSelect>
         </Formfield>
-        <Formfield comment={formFields[3].comment}>
+        <Formfield formField={formFields[3]}>
             <TextInput 
                 fieldData={formFields[3]}
                 onChange={handleChange}
             ></TextInput>
         </Formfield>
-        <Formfield comment={formFields[4].comment}>
+        <Formfield formField={formFields[4]}>
             <FileInput fieldData={formFields[4]}
                 onChange={handleChange}
             ></FileInput>
