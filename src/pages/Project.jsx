@@ -9,7 +9,7 @@ import Popup from '../components/UI/Popup.jsx';
 
 function Project({portfolio}) {
   const params = useParams();
-  const cat = portfolio.find(cat => cat.title === params.category_title)
+  const cat = portfolio.find(cat => cat.title === params.category_title);
   const project = cat.projects.find(project => project.id == parseInt(params.id) );
 
   const [isTestReuqestPopupOpen, updateisTestReuqestPopupOpen] = useState(false);
@@ -51,6 +51,7 @@ function Project({portfolio}) {
             </p>
         </div>
         <OrderForm 
+          portfolio={portfolio}
           containerClass='project-page__cta__form'
           buttonClass='basic-button--blue'
         ></OrderForm>
@@ -58,7 +59,7 @@ function Project({portfolio}) {
       {
             isTestReuqestPopupOpen &&
             <Popup containerClass="test-request-popup-wrapper" onClosePopup={handleClosePopup}>
-                <TestRequestPopup ></TestRequestPopup>
+                <TestRequestPopup projectId={project.id} projects={cat.projects}></TestRequestPopup>
             </Popup>
         }
     </div>

@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import axios from 'axios'
 
 import TextInput from './Form/TextInput.jsx'
 import Formfield from './Form/Formfield.jsx'
@@ -7,9 +8,12 @@ import FormSelect from './Form/FormSelect.jsx'
 import FileInput from './Form/FileInput.jsx'
 import BasicButton from './UI/BasicButton.jsx'
 import '../css/form.css'
-import axios from 'axios'
 
-export default function OrderForm({containerClass, buttonClass}) {  
+export default function OrderForm({portfolio, containerClass, buttonClass}) {  
+    let categoryOptions = [];
+    portfolio.forEach((cat)=>{
+        categoryOptions.push({title:cat.title, value: cat.id});
+    });
     const [formFields, updateFormFields] = useState(   
         [
             {
@@ -30,25 +34,10 @@ export default function OrderForm({containerClass, buttonClass}) {
             {
                 title: 'Технология',
                 fieldName: 'technology_id',
-                value: '',
+                value: null,
                 comment: '',
                 error: false,
-                options: [
-                    {
-                        title: 'AR',
-                        value: '1',
-                    },
-                    {
-                        title: 'VR',
-                        value: '2',
-
-                    },
-                    {
-                        title: '360',
-                        value: '3',
-
-                    },
-                ]
+                options: categoryOptions,
             },
             {
                 title: 'Название проекта',
@@ -170,12 +159,18 @@ export default function OrderForm({containerClass, buttonClass}) {
             console.log(response);
 
         })
-        .catch(response => 
+        .catch(error => 
         { 
-            console.log(response.message);
+            if(error.response.message !== "Success"){
+                Object.keys(error.response.data.error.errors).forEach((error)=>
+                    {
+                        const errorId = formFields.findIndex((field) => field.fieldName === error);
+                        addError(errorId);
+                    }
+                );
+            }
         });
     }
-
 
   return (
     <form 

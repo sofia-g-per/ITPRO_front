@@ -292,7 +292,7 @@ function App() {
           <Route path="/portfolio" element={<Portfolio portfolio={portfolio} />}/>
           {/* <Route path="/project" element={<Project project={portfolio[0].projects[0]} />}/> */}
           <Route path="/project/:category_title/:id" element={<Project portfolio={portfolio} />}/>
-          <Route path="/contact-us" element={<ContactUs />}/>
+          <Route path="/contact-us" element={<ContactUs portfolio={portfolio} />}/>
         </Routes>
 
         <TheFooter>

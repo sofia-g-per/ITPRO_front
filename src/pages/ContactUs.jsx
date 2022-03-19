@@ -2,7 +2,7 @@ import { useState } from 'react'
 import OrderForm from '../components/OrderForm';
 import '../css/contact-us.css'
 
-function ContactUs() {
+function ContactUs({portfolio}) {
     // технологии должны выводится из api
     return(
         <section className="split-middle-flex contact-us">
@@ -11,6 +11,7 @@ function ContactUs() {
                 <a href="mailto:info@itpro.moscow">info@itpro.moscow</a>
             </div>
             <OrderForm 
+                portfolio={portfolio}
                 containerClass='contact-us__form'
                 buttonClass='basic-button--purple'
             ></OrderForm>

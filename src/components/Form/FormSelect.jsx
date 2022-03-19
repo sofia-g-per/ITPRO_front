@@ -4,7 +4,8 @@ import React from 'react';
 function contactUs({fieldData, onChange}){
   // технологии должны выводится из api
   return (
-    <select onChange={onChange} 
+    <select 
+      onChange={onChange} 
       className={`form__select basic-text ${fieldData.error? 'form__field--error' : ''}`} 
       name={fieldData.fieldName} aria-label={fieldData.title}
     >
