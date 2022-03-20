@@ -30,6 +30,12 @@
     background: url('../../img/background/blue-middle.png') 0 95% no-repeat;
 
 }
+@media(max-width: 500px){
+    .portfolio__header{
+        grid-template-columns: 1fr;
+    }
+}
+
 
 .portfolio__header .primary-heading{
     grid-row: span 2;

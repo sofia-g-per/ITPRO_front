@@ -52,7 +52,7 @@ export default function TestRequestPopup({projectId, projects}) {
     const [formErrors, updateFormErrors] = useState([]);
     
     const checkError = (fieldIndex) => {
-        const {value, fieldName} = formFields[fieldIndex];
+        const {fieldName} = formFields[fieldIndex];
         let errorIndex = formErrors.findIndex(errorName => errorName === fieldName);
         if (errorIndex === -1){
             return true
@@ -62,7 +62,7 @@ export default function TestRequestPopup({projectId, projects}) {
 
     const addError = (fieldIndex) => {
         console.log(formFields[fieldIndex], fieldIndex);
-        let {value, fieldName} = formFields[fieldIndex];
+        let {fieldName} = formFields[fieldIndex];
         let updatedFormFields = formFields;
         if (checkError(fieldIndex)){
             updateFormErrors([...formErrors , fieldName]);
@@ -72,7 +72,7 @@ export default function TestRequestPopup({projectId, projects}) {
     }
 
     const removeError = (fieldIndex) => {
-        const {value, fieldName} = formFields[fieldIndex];
+        const {fieldName} = formFields[fieldIndex];
         let updatedFormFields = formFields;
         console.log('checkerror', !checkError(fieldIndex));
         if (!checkError(fieldIndex)){
@@ -85,8 +85,7 @@ export default function TestRequestPopup({projectId, projects}) {
     }
 
     const validateFilled = (fieldIndex) => {
-        const {value, fieldName, error} = formFields[fieldIndex];
-        let updatedFormFields = formFields;
+        const {value} = formFields[fieldIndex];
             if( value.trim() === ''){
                 addError(fieldIndex);
             }else {

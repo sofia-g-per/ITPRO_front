@@ -3,9 +3,11 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+import AboutUs from './pages/AboutUs.jsx';
 import ContactUs from './pages/ContactUs.jsx';
 import Portfolio from './pages/Portfolio.jsx';
 import Project from './pages/Project.jsx';
+
 import TheHeader from './components/theHeader.jsx';
 import TheFooter from './components/theFooter.jsx';
 import NavBar from './components/NavBar.jsx';
@@ -13,11 +15,7 @@ import Popup from './components/UI/Popup';
 import TestRequestPopup from './components/Popups/TestRequestPopup.jsx';
 import ContactsPopup from './components/Popups/ContactsPopup.jsx';
 import FormSubmittedPopup from './components/Popups/FormSubmittedPopup.jsx';
-import DevWithArVr from './components/DevWithArVr.jsx';
-import StagesOfDevScroll from './components/StagesOfDevScroll.jsx';
-import OurCustomers from './components/OurCustomers.jsx';
-import LogoSection from './components/LogoSection.jsx';
-import StagesOfDevelopment from './components/StagesOfDevelopment.jsx';
+
 
 function App() {
     let portfolioOLD = [
@@ -288,8 +286,8 @@ function App() {
         </TheHeader>
 
         <Routes>
-          <Route path="/" exact element={<TestRequestPopup />}/>
-          <Route path="/portfolio" element={<Portfolio portfolio={portfolio} />}/>
+          <Route path="/" exact element={<AboutUs />}/>
+          {/* <Route path="/" element={<Portfolio portfolio={portfolio} />}/> */}
           {/* <Route path="/project" element={<Project project={portfolio[0].projects[0]} />}/> */}
           <Route path="/project/:category_title/:id" element={<Project portfolio={portfolio} />}/>
           <Route path="/contact-us" element={<ContactUs portfolio={portfolio} />}/>
@@ -300,15 +298,7 @@ function App() {
         </TheFooter>
       </Router>
 </React.Fragment>
-    // <div className="App">
-    //   <TheHeader></TheHeader>
-    //   <DevWithArVr></DevWithArVr>
-    //   <OurCustomers></OurCustomers>
-    //   <LogoSection></LogoSection>
-    //   <StagesOfDevelopment></StagesOfDevelopment>
-    //   <ContactUs></ContactUs>
-    //   <TheFooter></TheFooter>
-    // </div>
+
   );
 }
 

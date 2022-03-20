@@ -55,6 +55,8 @@ export default function OrderForm({portfolio, containerClass, buttonClass}) {
             },
         ] 
     );
+
+    const [isFormSubmitted, updateIsFormSubmitted] = useState(false);
     const [formErrors, updateFormErrors] = useState([]);
     
     const checkError = (fieldIndex) => {
@@ -168,6 +170,8 @@ export default function OrderForm({portfolio, containerClass, buttonClass}) {
                         addError(errorId);
                     }
                 );
+            }else{
+                updateIsFormSubmitted(true);
             }
         });
     }

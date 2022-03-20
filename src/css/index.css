@@ -19,13 +19,11 @@ html{
 
   --color--blue-dark:#377E95;
   --color--blue-darker: #1F4B59;
-  ;
-
   --popup-padding: 3.5rem;
-
+}
+@media(max-width: 700px){
 
 }
-
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
