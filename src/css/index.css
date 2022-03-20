@@ -222,3 +222,7 @@ body {
   background-color: var(--color-blue-darker);
 }
 
+#root {
+  background: url("../img/background/light.png") 0% 0% no-repeat;
+
+}

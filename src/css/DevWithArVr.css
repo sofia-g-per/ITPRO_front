@@ -1,13 +1,23 @@
+ 
+.dev-with-ar-vr {
+   display: flex;
+   justify-content: space-between;
+   padding: 16rem 14rem;
+   min-height: 109rem;
+
+   /*background-image: url(../img/background/Video.png), url(../img/background/Ellipse 58.svg), url(../img/background/Ellipse 57.svg);
+   background-repeat: no-repeat, no-repeat, no-repeat;
+   background-position: 100% 61%, 100% 4%, 0% 0%;*/
+   background: url("../img/background/Video.png") 100% 61% no-repeat;
+}
+
+
+
 .purple-text {
 	color: #A768BA;
 }
 
-.dev-with-ar-vr {
-	display: flex;
-	justify-content: space-between;
-	padding: 16rem 14rem;
-	min-height: 109rem;
-}
+
 
 .text-with-arrow {
 	display: flex;
@@ -18,7 +28,7 @@
 	padding-left: 2.5rem;
 }
 
-.video-background-AR-VR {
+/*.video-background-AR-VR {
     position:absolute;
     z-index:-1;
     right: 0;
@@ -38,3 +48,7 @@
  	left: 45rem;
  }
 
+ .background-img {
+    
+ }
+*/
